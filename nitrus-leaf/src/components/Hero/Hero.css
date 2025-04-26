@@ -1,0 +1,56 @@
+/* src/components/Hero.css */
+.hero {
+  background-color: #FAF0D7;
+  color: black;
+  text-align: center;
+  padding-top: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 100px;
+}
+
+.hero h1 {
+  font-size: 1.5rem;
+  font-family: "Kantumruy Pro", sans-serif;
+  margin-bottom: 80px;
+}
+
+.auth-buttons {
+  display: flex;
+  width: 300px;
+  padding-right: 50px;
+  padding-left: 80px;
+  height: 50px;
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+  .auth-button {
+  background-color: #49A010;
+  padding: 10px;
+  border: none;
+  color: #FAF0D7;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 20px;
+  }
+
+  .auth-button-register{
+    background-color: #FAF0D7;
+    padding: 10px;
+    border: solid #49A010 3px;
+    color: #49A010;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+
+  .auth-button.google {
+  background-color: #db4437;
+  }
+
+  .auth-button:hover {
+  opacity: 0.8;
+  }  
