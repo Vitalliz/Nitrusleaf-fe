@@ -1,0 +1,16 @@
+h1 {
+    font-size: 1.5rem;
+    font-family: "Kantumruy Pro", sans-serif;  
+    font-weight: 550;    
+}
+
+.h12{
+    color: #626262;
+}
+
+main{
+    margin-top: 40px;   
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

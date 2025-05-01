@@ -15,15 +15,13 @@
 .hero h1 {
   font-size: 1.5rem;
   font-family: "Kantumruy Pro", sans-serif;
-  margin-bottom: 80px;
 }
 
 .auth-buttons {
   display: flex;
   color: white;
-  margin-top: 30px;
+  margin-top: 40px;
   width: 150px;
-  height: 50px;
   align-self: center;
   flex-direction: column;
   justify-content: center;
@@ -38,6 +36,8 @@
   background-color: #49A010;
   padding: 10px;
   border: none;
+  height: 50px;
+  width: 80%;
   color: #FAF0D7;
   font-size: 1rem;
   cursor: pointer;
@@ -50,6 +50,7 @@
 
   .auth-button-register{
     background-color: #FAF0D7;
+    height: 50px;
     padding: 10px;
     border: solid #49A010 3px;
     color: #49A010;
@@ -64,6 +65,7 @@
 
   .auth-button.google {
   background-color: #db4437;
+  height: 50px;
   }
 
   .auth-button:hover {

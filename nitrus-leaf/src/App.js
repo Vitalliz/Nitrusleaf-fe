@@ -1,20 +1,16 @@
 // src/App.js
 import React from 'react';
-import './App.css';
-import Header from './components/Header/Header.js';
-import Hero from './components/Hero/Hero.js';
-import Footer from './components/Footer/Footer.js';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Homepage from './pages/Homepage/Homepage.js';
+import Login from './pages/Login/Login.js';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <Header />
-      <div style={{ flex: 1 }}>
-      <Hero />
-      </div>
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
   );
 }
-
-export default App;
