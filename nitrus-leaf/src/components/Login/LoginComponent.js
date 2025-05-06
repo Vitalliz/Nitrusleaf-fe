@@ -29,37 +29,40 @@ export default function LoginComponent() {
       <div className="title">
         <h1>Bem-vindo!</h1>
         <h1 className="h12">Entre na sua conta</h1>
-        </div>
+      
+        <br/>
         <form onSubmit={handleSubmit} className="login-form">
 
           <label>Email:</label>
+          <br/>
           <input
             type="email"
-            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className=""/>
+            className="box"/>
 
+          <br/>
           <label>Senha:</label>
+          <br/>
           <input
             type="password"
-            placeholder="Senha"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          />
+            className="box"/>
 
           {error && <p className="error">{error}</p>}
-
-          <button type="submit">Entrar</button>
+          <br/>
+          <button type="submit" className="auth-button">Entrar</button>
         </form>
         <Link to="/GoogleL" className="links">
-          <button className="auth-button google">Entrar com o Google</button>
+          <button className="auth-button-google">Entrar com o Google</button>
         </Link>
+        <div className="sideButtons">
         <Link to="/senha" className="">
           <p>Esqueci a senha</p>
         </Link>
-        <div>
-        <p>Não possui uma conta?</p><Link><p>Fazer cadastro</p></Link>
+        <p className="p1">Não possui uma conta?<Link>Fazer cadastro</Link></p>
+        </div>
         </div>
     </main>
   );

@@ -1,7 +1,17 @@
+* {
+    font-family: "Kantumruy Pro", sans-serif;
+}
+
 h1 {
     font-size: 1.5rem;
     font-family: "Kantumruy Pro", sans-serif;  
     font-weight: 550;    
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .h12{
@@ -13,20 +23,62 @@ h1 {
     height: 50px;
 }
 
+form label {
+    font-weight: 500;
+}
+
+.box {
+    height: 36px;
+    border-radius: 45px;
+    width: 240px;
+    margin-top: 2px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1.4px solid #65B741;
+}
+
 .links {
     text-decoration: solid;
-  }
-  
+}
+
+.sideButtons{
+    font-size: 14px;
+    text-align: center;
+}
+
+.p1{
+    margin-top: 10px;
+}
+
 .auth-button {
     background-color: #49A010;
     padding: 10px;
     border: none;
-    height: 50px;
-    width: 80%;
-    color: #FAF0D7;
+    height: 36px;
+    border-radius: 45px;
+    width: 240px;
+    color: white;
     font-size: 1rem;
     cursor: pointer;
-    border-radius: 20px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.auth-button-google{
+    background-color: white;
+    padding: 10px;
+    border: none;
+    height: 36px;
+    border-radius: 45px;
+    width: 240px;
+    color: black;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid black;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 450;
 }
 
 main{
