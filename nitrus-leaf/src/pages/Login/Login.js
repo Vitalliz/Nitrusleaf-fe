@@ -1,9 +1,9 @@
 // src/App.js
 import React from 'react';
 import './Login.css';
-import Header from '../../components/Header/Header.js';
-import LoginComponent from '../../components/Login/LoginComponent.js'
-import Footer from '../../components/Footer/Footer.js';
+import Header from '../../components/Header/index.js';
+import LoginComponent from '../../components/LoginContent/index.js'
+import Footer from '../../components/Footer/index.js';
 
 function Login() {
   return (

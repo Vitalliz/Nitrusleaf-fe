@@ -21,10 +21,10 @@
   display: flex;
   color: white;
   margin-top: 40px;
-  width: 150px;
   align-self: center;
+  align-content: center;
   flex-direction: column;
-  justify-content: center;
+  justify-self: center;
   gap: 20px;
 }
 
@@ -32,42 +32,43 @@
   text-decoration: solid;
 }
 
-  .auth-button {
-  background-color: #49A010;
-  padding: 10px;
-  border: none;
-  height: 50px;
-  width: 80%;
-  color: #FAF0D7;
+.auth-button {
+  height: 36px;
+  width: 200px;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 20px;
-  }
+}
 
-  .auth-button a {
-    color: #FAF0D7;
-    }
+.login {
+  color: #FAF0D7;
+  border: none;
+  background-color: #49A010;
+}
 
-  .auth-button-register{
-    background-color: #FAF0D7;
-    height: 50px;
-    padding: 10px;
-    border: solid #49A010 3px;
-    color: #49A010;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 20px;
-  }
+.register {
+  color: #49A010;
+  background-color: #FAF0D7;
+  border: solid #49A010 3px;
+}
 
-  .auth-button-register a{
-    color: #49A010;
-  }
+.googleL{
+  
+}
 
-  .auth-button.google {
+.auth-button a {
+  color: #FAF0D7;
+}
+
+.auth-button-register a{
+  color: #49A010;
+}
+
+.auth-button-google {
   background-color: #db4437;
   height: 50px;
-  }
+}
 
-  .auth-button:hover {
+.auth-button:hover {
   opacity: 0.8;
-  }  
+}  

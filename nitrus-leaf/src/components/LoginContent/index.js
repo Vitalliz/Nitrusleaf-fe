@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./LoginComponent.css";
+import styles from "./LoginContent.module.css";
 import { Link } from 'react-router-dom'; // 👈 importa Link
 
 export default function LoginComponent() {
@@ -26,12 +26,13 @@ export default function LoginComponent() {
 
   return (
     <main>
-      <div className="title">
+      <div className={styles["title"]}>
+        <div>
         <h1>Bem-vindo!</h1>
-        <h1 className="h12">Entre na sua conta</h1>
-      
+        <h1 className={styles["h12"]}>Entre na sua conta</h1>
+        </div>
         <br/>
-        <form onSubmit={handleSubmit} className="login-form">
+        <form onSubmit={handleSubmit} className={styles["login-form"]}>
 
           <label>Email:</label>
           <br/>
@@ -39,7 +40,7 @@ export default function LoginComponent() {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="box"/>
+            className={styles["box"]}/>
 
           <br/>
           <label>Senha:</label>
@@ -48,20 +49,20 @@ export default function LoginComponent() {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="box"/>
+            className={styles["box"]}/>
 
-          {error && <p className="error">{error}</p>}
+          {error && <p className={styles["error"]}>{error}</p>}
           <br/>
-          <button type="submit" className="auth-button">Entrar</button>
+          <button type="submit" className={styles["auth-button"]}>Entrar</button>
         </form>
-        <Link to="/GoogleL" className="links">
-          <button className="auth-button-google">Entrar com o Google</button>
-        </Link>
-        <div className="sideButtons">
+        {/* <Link to="/GoogleL" className={styles["links"]}>
+          <button className={styles["auth-button-google"]}>Entrar com o Google</button>
+        </Link> */}
+        <div className={styles["sideButtons"]}>
         <Link to="/senha" className="">
           <p>Esqueci a senha</p>
         </Link>
-        <p className="p1">Não possui uma conta?<Link>Fazer cadastro</Link></p>
+        <p className={styles["p1"]}>Não possui uma conta? <Link to="/register">Fazer cadastro</Link></p>
         </div>
         </div>
     </main>
