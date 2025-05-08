@@ -10,13 +10,13 @@ function Header() {
             <a href="/#">
               <img src={NitrusLeafLogo} className="logoImage" alt="Logo do projeto"/>
             </a>
-          <ul>
+          {/* <ul>
             <li><a href="#app">Aplicativo</a></li>
             <li><a href="#sobre-nos">Sobre nós</a></li>
-          </ul>
+          </ul> */}
           </div>
       </nav>
-      <div className="line" />
+      {/* <div className="line" /> */}
     </header>
   );
 }

@@ -1,14 +1,15 @@
 // src/App.js
 import React from 'react';
 import Header from '../../components/Header/index.js';
-import RegisterComponent from '../../components/RegisterContent/index.js'
+import styles from './Register.module.css'
+import RegisterComponent from '../../components/RegisterContent1/index.js'
 import Footer from '../../components/Footer/index.js';
 
 function Login() {
   return (
     <div className="App">
       <Header />
-      <div style={{ flex: 1 }}>
+      <div className={styles["divprincipal"]}>
       <RegisterComponent />
       </div>
       <Footer />

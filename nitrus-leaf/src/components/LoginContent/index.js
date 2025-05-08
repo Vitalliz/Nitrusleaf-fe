@@ -62,8 +62,11 @@ export default function LoginComponent() {
         <Link to="/senha" className="">
           <p>Esqueci a senha</p>
         </Link>
-        <p className={styles["p1"]}>Não possui uma conta? <Link to="/register">Fazer cadastro</Link></p>
         </div>
+        </div>
+        <div className={styles["cadastro"]}>
+        <p className={styles["p1"]}>Não possui uma conta?</p>
+        <Link to="/register" className={styles["cadastro"]}><p className={styles["register"]}>Fazer cadastro</p></Link>
         </div>
     </main>
   );

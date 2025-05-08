@@ -28,6 +28,30 @@ form label {
     font-size: 0.80rem;
 }
 
+.cadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    text-decoration: none;
+}
+
+.register{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    width: 150px;
+    height: 50px;
+    border: 2px solid #65B741;
+    border-radius: 30px;
+}
+
+
 .box {
     height: 36px;
     border-radius: 45px;
