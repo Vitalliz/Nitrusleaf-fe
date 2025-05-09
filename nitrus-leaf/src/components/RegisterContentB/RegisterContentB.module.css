@@ -1,8 +1,7 @@
-
 /* Para notebooks */
 @media (min-width: 700px) and (max-width: 1440px) {
     .h11 {
-        font-size: 1.5rem;
+        font-size: 2.1rem;
         font-family: "Kantumruy Pro", sans-serif;  
         font-weight: 550;    
     }
@@ -52,8 +51,8 @@
         align-items: baseline;
         padding: 20px;
         margin-top: 20px;
-        width: 300px;
-        height: 100px;
+        width: 350px;
+        height: 120px;
     }
     
     .p1{
@@ -99,11 +98,11 @@
         align-items: center;
         background-color: #49A010;
         border: none;
-        height: 22px;
+        height: 28px;
         padding: 10px;
-        margin-top: 10px;
+        margin-top: 13px;
         border-radius: 45px;
-        width: 60px;
+        width: 70px;
         text-decoration: none;
         color: white;
         cursor: pointer;
@@ -113,35 +112,19 @@
     }
     
     .imagem{
-        margin-right: 3px;
+        margin-right: 4px;
         margin-bottom: 3px;
-        width: 11px;
-        height: 11px;
+        width: 17px;
     }
     
     .voltar{
         text-decoration: none;
-        font-size: 0.5rem;
+        font-weight: 400;
+        font-size: 0.65rem;
     }
     
     .links1{
         text-decoration: none;
-    }
-    
-    .auth-button-google{
-        background-color: white;
-        padding: 10px;
-        border: none;
-        height: 36px;
-        border-radius: 45px;
-        width: 240px;
-        color: black;
-        font-size: 1rem;
-        cursor: pointer;
-        border: 1px solid black;
-        font-size: 16px;
-        margin-bottom: 15px;
-        font-weight: 450;
     }
     
     .main{
@@ -205,7 +188,7 @@
         align-items: baseline;
         padding: 20px;
         margin-top: 20px;
-        width: 300px;
+        width: 360px;
         height: 100px;
     }
     
