@@ -1,14 +1,14 @@
 // src/components/Header.js
 import React from 'react';
-import './Header.css';
+import styles from './Header.module.css';
 import NitrusLeafLogo from "../../assets/NitrusLeafLogo.svg"
 function Header() {
   return (
     <header>
       <nav>
-        <div className="logo">
+        <div className={styles["logo"]}>
             <a href="/#">
-              <img src={NitrusLeafLogo} className="logoImage" alt="Logo do projeto"/>
+              <img src={NitrusLeafLogo} className={styles["logoImage"]} alt="Logo do projeto"/>
             </a>
           {/* <ul>
             <li><a href="#app">Aplicativo</a></li>

@@ -1,6 +1,6 @@
 // src/App.js
 import React from 'react';
-import './Login.css';
+import styles from './Login.module.css';
 import Header from '../../components/Header/index.js';
 import LoginComponent from '../../components/LoginContent/index.js'
 import Footer from '../../components/Footer/index.js';
@@ -9,7 +9,7 @@ function Login() {
   return (
     <div className="App">
       <Header />
-      <div style={{ flex: 1 }}>
+      <div className={styles["divprincipallogin"]}>
       <LoginComponent />
       </div>
       <Footer />

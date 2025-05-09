@@ -1,10 +1,10 @@
-import styles from "./RegisterContent.module.css"
+import styles from "./RegisterContentB.module.css"
 import { Link } from 'react-router-dom'; // 👈 importa Link
 
-export default function RegisterComponent() {
+export default function RegisterContentB() {
   
     return (
-      <main>
+      <main className={styles["main"]}>
         <div className={styles["title"]}>
         <div className={styles["div2"]}>
         <h1>Bem-vindo!</h1>

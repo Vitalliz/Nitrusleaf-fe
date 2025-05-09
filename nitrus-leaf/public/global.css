@@ -1,0 +1,29 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Kantumruy Pro", sans-serif;
+}
+
+
+.bg{
+    background-color: #FAF0D7; 
+}
+
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #FAF0D7;
+}
+
+.divprincipal {
+    flex: 1;
+    align-content: center;
+}

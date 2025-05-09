@@ -25,11 +25,11 @@ export default function LoginComponent() {
   };
 
   return (
-    <main>
+    <main className={styles["main"]}>
       <div className={styles["title"]}>
         <div>
-        <h1>Bem-vindo!</h1>
-        <h1 className={styles["h12"]}>Entre na sua conta</h1>
+        <h1 className={styles["h11"]}>Bem-vindo!</h1>
+        <h1 className={`${styles["h12"]} ${styles['h11']}`}>Entre na sua conta</h1>
         </div>
         <br/>
         <form onSubmit={handleSubmit} className={styles["login-form"]}>
@@ -53,7 +53,7 @@ export default function LoginComponent() {
 
           {error && <p className={styles["error"]}>{error}</p>}
           <br/>
-          <Link to="/dashboard"><button type="submit" className={styles["auth-button"]}>Entrar</button></Link>
+          <button type="submit" className={styles["auth-button"]}>Entrar</button>
         </form>
         {/* <Link to="/GoogleL" className={styles["links"]}>
           <button className={styles["auth-button-google"]}>Entrar com o Google</button>
@@ -62,11 +62,8 @@ export default function LoginComponent() {
         <Link to="/senha" className="">
           <p>Esqueci a senha</p>
         </Link>
+        <p className={styles["p1"]}>Não possui uma conta? <Link to="/registerb">Fazer cadastro</Link></p>
         </div>
-        </div>
-        <div className={styles["cadastro"]}>
-        <p className={styles["p1"]}>Não possui uma conta?</p>
-        <Link to="/register1" className={styles["cadastro"]}><p className={styles["register"]}>Fazer cadastro</p></Link>
         </div>
     </main>
   );
