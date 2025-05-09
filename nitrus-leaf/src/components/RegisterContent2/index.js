@@ -1,20 +1,20 @@
-import styles from "./RegisterContent1.module.css";
+import styles from "./RegisterContent2.module.css";
 import { Link } from 'react-router-dom'; // 👈 importa Link
 
-export default function RegisterComponent1() {
+export default function RegisterComponent2() {
   return (
     <main className={styles["main-register"]}>
       <div className={styles["box-register"]}>
         <h5>CADASTRO</h5>
         <h1>Crie uma conta</h1>
-        <p className={styles["p1-register"]}>Bem vindo ao NitrusLeaf!</p>
+        <p className={styles["p1-register"]}>Insira seus dados</p>
         <div className={styles["line"]}/>
 
         <form className={styles["form-register"]}>
           {/* Linha 1: Nome + Sobrenome */}
           <div className={styles["form-row"]}>
             <div className={styles["form-group"]}>
-              <label htmlFor="nome">Nome</label>
+              <label htmlFor="nome">CPF</label>
               <input
                 type="text"
                 id="nome"
@@ -24,7 +24,7 @@ export default function RegisterComponent1() {
               />
             </div>
             <div className={styles["form-group"]}>
-              <label htmlFor="sobrenome">Sobrenome</label>
+              <label htmlFor="sobrenome">Logradouro</label>
               <input
                 type="text"
                 id="sobrenome"
@@ -37,7 +37,7 @@ export default function RegisterComponent1() {
 
           {/* Linha 2 em diante: campos sozinhos */}
           <div className={styles["form-group"]}>
-            <label htmlFor="telefone">Telefone</label>
+            <label htmlFor="telefone">Número</label>
             <input
               type="tel"
               id="telefone"
@@ -48,7 +48,7 @@ export default function RegisterComponent1() {
           </div>
 
           <div className={styles["form-group"]}>
-            <label htmlFor="email">E-mail</label>
+            <label htmlFor="email">Bairro</label>
             <input
               type="email"
               id="email"
@@ -59,7 +59,7 @@ export default function RegisterComponent1() {
           </div>
 
           <div className={styles["form-group"]}>
-            <label htmlFor="senha">Senha</label>
+            <label htmlFor="senha">Cidade</label>
             <input
               type="password"
               id="senha"
@@ -67,7 +67,7 @@ export default function RegisterComponent1() {
               className={styles["form-input"]}
               required
             />
-          <Link to="/register2"><button type="submit" className={styles["auth-button"]}>Continuar</button></Link>
+          <Link to="/dashboard"><button type="submit" className={styles["auth-button"]}>Continuar</button></Link>
           </div>
         </form>
       </div>

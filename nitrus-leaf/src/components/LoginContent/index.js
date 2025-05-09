@@ -53,7 +53,7 @@ export default function LoginComponent() {
 
           {error && <p className={styles["error"]}>{error}</p>}
           <br/>
-          <button type="submit" className={styles["auth-button"]}>Entrar</button>
+          <Link to="/dashboard"><button type="submit" className={styles["auth-button"]}>Entrar</button></Link>
         </form>
         {/* <Link to="/GoogleL" className={styles["links"]}>
           <button className={styles["auth-button-google"]}>Entrar com o Google</button>
@@ -66,7 +66,7 @@ export default function LoginComponent() {
         </div>
         <div className={styles["cadastro"]}>
         <p className={styles["p1"]}>Não possui uma conta?</p>
-        <Link to="/register" className={styles["cadastro"]}><p className={styles["register"]}>Fazer cadastro</p></Link>
+        <Link to="/register1" className={styles["cadastro"]}><p className={styles["register"]}>Fazer cadastro</p></Link>
         </div>
     </main>
   );
