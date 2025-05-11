@@ -1,0 +1,554 @@
+/* Para notebooks */
+@media (min-width:700) and (max-width: 1366){
+    .h11 {
+        font-size: 2.1rem;
+        font-family: "Kantumruy Pro", sans-serif;  
+        font-weight: 550;    
+    }
+    
+    .title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .h12{
+        color: #626262;
+    }
+    
+    .div2 {
+        margin-bottom: 0px;
+        margin-right: 155px;
+    }
+    
+    .h1botao{
+        font-size: 1.4em;
+        font-weight: 700;
+        margin-bottom: 7px;
+    }
+    
+    
+    
+    .p1botao{
+        text-align: left;
+        font-size: 0.74rem;
+        color: #525252;
+        font-weight: 550;
+    }
+    
+    .links {
+        text-decoration: none; /* Isso irá remover o sublinhado do Link */
+    }
+    
+    .botaoEscolha {
+        display: flex;
+        text-decoration: none;
+        flex-direction: column;
+        border-radius: 10px;
+        border: 2px solid #65B741;
+        background-color: white;
+        justify-content: baseline;
+        align-items: baseline;
+        padding: 20px;
+        width: 350px;
+        height: 120px;
+    }
+
+    .b1{
+        margin-top: 6px;
+    }
+
+    .b2{
+        margin-top: 20px;
+    }
+
+    .p1{
+        margin-top: 3px;
+        margin-left: 8px;
+        font-size: 10.9px;
+        color: #525252;
+        font-weight: 500;
+    }
+    
+    .auth-button.google {
+        background-color: #db4437;
+        height: 50px;
+    }
+    
+    .box {
+        height: 36px;
+        border-radius: 45px;
+        width: 240px;
+        margin-top: 2px;
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1.4px solid #65B741;
+    }
+    
+    .links {
+        text-decoration: solid;
+    }
+    
+    .sideButtons{
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    .auth_button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: #49A010;
+        border: none;
+        height: 32px;
+        padding-left: 10px;
+        margin-top: 13px;
+        border-radius: 45px;
+        width: 80px;
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        margin-bottom: 15px;
+        font-weight: 500;
+    }
+    
+    .imagem{
+        margin-right: 7px;
+        margin-bottom: 3px;
+        width: 17px;
+    }
+    
+    .voltar{
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 0.66rem;
+    }
+    
+    .links1{
+        text-decoration: none;
+    }
+    
+    .main{
+        margin-top: 0px;   
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+@media (min-width: 1366px) and (max-width: 1440px) {
+   .h11 {
+        font-size: 2.1rem;
+        font-family: "Kantumruy Pro", sans-serif;  
+        font-weight: 550;    
+    }
+    
+    .title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .h12{
+        color: #626262;
+    }
+    
+    .div2 {
+        margin-bottom: 0px;
+        margin-right: 155px;
+    }
+    
+    .h1botao{
+        font-size: 1.4em;
+        font-weight: 700;
+        margin-bottom: 7px;
+    }
+
+    .p1botao{
+        text-align: left;
+        font-size: 0.74rem;
+        color: #525252;
+        font-weight: 550;
+    }
+    
+    .links {
+        text-decoration: none; /* Isso irá remover o sublinhado do Link */
+    }
+    
+    .botaoEscolha {
+        display: flex;
+        text-decoration: none;
+        flex-direction: column;
+        border-radius: 10px;
+        border: 2px solid #65B741;
+        background-color: white;
+        justify-content: baseline;
+        align-items: baseline;
+        padding: 20px;
+        width: 350px;
+        height: 120px;
+    }
+
+    .b1{
+        margin-top: 6px;
+    }
+
+    .b2{
+        margin-top: 20px;
+    }
+
+    .p1{
+        margin-top: 3px;
+        margin-left: 8px;
+        font-size: 10.9px;
+        color: #525252;
+        font-weight: 500;
+    }
+    
+    .auth-button.google {
+        background-color: #db4437;
+        height: 50px;
+    }
+    
+    .box {
+        height: 36px;
+        border-radius: 45px;
+        width: 240px;
+        margin-top: 2px;
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1.4px solid #65B741;
+    }
+    
+    .links {
+        text-decoration: solid;
+    }
+    
+    .sideButtons{
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    .auth_button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: #49A010;
+        border: none;
+        height: 32px;
+        padding-left: 10px;
+        margin-top: 13px;
+        border-radius: 45px;
+        width: 80px;
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        margin-bottom: 15px;
+        font-weight: 500;
+    }
+    
+    .imagem{
+        margin-right: 7px;
+        margin-bottom: 3px;
+        width: 17px;
+    }
+    
+    .voltar{
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 0.66rem;
+    }
+    
+    .links1{
+        text-decoration: none;
+    }
+    
+    .main{
+        margin-top: 40px;   
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+/* Para desktops */
+ @media (min-width: 1440px) and (max-width: 1920px) {
+   .h11 {
+        font-size: 3rem;
+        font-family: "Kantumruy Pro", sans-serif;  
+        font-weight: 550;    
+    }
+    
+    .title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .h12{
+        color: #626262;
+    }
+    
+    .div2 {
+        margin-bottom: 0px;
+        margin-right: 155px;
+    }
+    
+    .h1botao{
+        font-size: 1.4em;
+        font-weight: 700;
+        margin-bottom: 7px;
+    }
+    
+    
+    
+    .p1botao{
+        text-align: left;
+        font-size: 1.15rem;
+        color: #525252;
+        font-weight: 550;
+    }
+    
+    .links {
+        text-decoration: none; /* Isso irá remover o sublinhado do Link */
+    }
+    
+    .botaoEscolha {
+        display: flex;
+        text-decoration: none;
+        flex-direction: column;
+        border-radius: 10px;
+        border: 2px solid #65B741;
+        background-color: white;
+        justify-content: baseline;
+        align-items: baseline;
+        padding: 20px;
+        width: 450px;
+        height: 180px;
+    }
+
+    .b1{
+        margin-top: 8px;
+    }
+
+    .b2{
+        margin-top: 20px;
+    }
+
+    .p1{
+        margin-top: 3px;
+        margin-left: 8px;
+        font-size: 10.9px;
+        color: #525252;
+        font-weight: 500;
+    }
+    
+    .auth-button.google {
+        background-color: #db4437;
+        height: 50px;
+    }
+    
+    .box {
+        height: 36px;
+        border-radius: 45px;
+        width: 240px;
+        margin-top: 2px;
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1.4px solid #65B741;
+    }
+    
+    .links {
+        text-decoration: solid;
+    }
+    
+    .sideButtons{
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    .auth_button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: #49A010;
+        border: none;
+        height: 36px;
+        padding-left: 15px;
+        margin-top: 13px;
+        border-radius: 45px;
+        width: 100px;
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        margin-bottom: 15px;
+        font-weight: 500;
+    }
+    
+    .imagem{
+        margin-right: 7px;
+        margin-bottom: 3px;
+        width: 21px;
+    }
+    
+    .voltar{
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 0.85rem;
+    }
+    
+    .links1{
+        text-decoration: none;
+    }
+    
+    .main{
+        margin-top: 40px;   
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+/* Para telas grandes */
+@media (min-width: 1920px) {
+    .h11 {
+        font-size: 3rem;
+        font-family: "Kantumruy Pro", sans-serif;  
+        font-weight: 550;    
+    }
+    
+    .title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .h12{
+        color: #626262;
+    }
+    
+    .div2 {
+        margin-bottom: 0px;
+        margin-right: 155px;
+    }
+    
+    .h1botao{
+        font-size: 1.4em;
+        font-weight: 700;
+        margin-bottom: 7px;
+    }
+    
+    
+    
+    .p1botao{
+        text-align: left;
+        font-size: 1.15rem;
+        color: #525252;
+        font-weight: 550;
+    }
+    
+    .links {
+        text-decoration: none; /* Isso irá remover o sublinhado do Link */
+    }
+    
+    .botaoEscolha {
+        display: flex;
+        text-decoration: none;
+        flex-direction: column;
+        border-radius: 10px;
+        border: 2px solid #65B741;
+        background-color: white;
+        justify-content: baseline;
+        align-items: baseline;
+        padding: 20px;
+        width: 450px;
+        height: 180px;
+    }
+
+    .b1{
+        margin-top: 8px;
+    }
+
+    .b2{
+        margin-top: 20px;
+    }
+
+    .p1{
+        margin-top: 3px;
+        margin-left: 8px;
+        font-size: 10.9px;
+        color: #525252;
+        font-weight: 500;
+    }
+    
+    .auth-button.google {
+        background-color: #db4437;
+        height: 50px;
+    }
+    
+    .box {
+        height: 36px;
+        border-radius: 45px;
+        width: 240px;
+        margin-top: 2px;
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1.4px solid #65B741;
+    }
+    
+    .links {
+        text-decoration: solid;
+    }
+    
+    .sideButtons{
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    .auth_button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: #49A010;
+        border: none;
+        height: 36px;
+        padding-left: 15px;
+        margin-top: 13px;
+        border-radius: 45px;
+        width: 100px;
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        margin-bottom: 15px;
+        font-weight: 500;
+    }
+    
+    .imagem{
+        margin-right: 7px;
+        margin-bottom: 3px;
+        width: 21px;
+    }
+    
+    .voltar{
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 0.85rem;
+    }
+    
+    .links1{
+        text-decoration: none;
+    }
+    
+    .main{
+        margin-top: 40px;   
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+
+  
