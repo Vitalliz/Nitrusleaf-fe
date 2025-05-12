@@ -1,4 +1,4 @@
-import styles from "./RegisterContent2.module.css";
+import styles from "./RegisterContent2b.module.css";
 import Link from 'next/link';
 
 export default function RegisterComponent2() {
@@ -7,7 +7,7 @@ export default function RegisterComponent2() {
       <div className={styles["box-register"]}>
         <h5 className={styles.h5}>CADASTRO</h5>
         <h1>Crie uma conta</h1>
-        <p className={styles["p1-register"]}>Bem vindo ao NitrusLeaf!</p>
+        <p className={styles["p1-register"]}>Insira seus dados</p>
         <div className={styles["line"]} />
 
         <form className={styles.formo}>

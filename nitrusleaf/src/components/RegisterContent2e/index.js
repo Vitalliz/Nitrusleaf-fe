@@ -1,4 +1,4 @@
-import styles from "./RegisterContent1.module.css";
+import styles from "./RegisterContent2e.module.css";
 import Link from 'next/link';
 
 export default function RegisterComponent1() {
@@ -14,7 +14,7 @@ export default function RegisterComponent1() {
         <div className={styles["form-register"]}>
           {/* Linha 1 */}
           <div className={styles["form1"]}>
-            <label htmlFor="nome">Nome</label>
+            <label htmlFor="email">E-mail</label>
             <input
               type="text"
               id="nome"
@@ -25,7 +25,7 @@ export default function RegisterComponent1() {
           </div>
 
           <div className={styles["form2"]}>
-            <label htmlFor="sobrenome">Sobrenome</label>
+            <label htmlFor="senha">Senha</label>
             <input
               type="text"
               id="sobrenome"
@@ -42,29 +42,6 @@ export default function RegisterComponent1() {
               type="tel"
               id="telefone"
               name="telefone"
-              className={styles["form-input"]}
-              required
-            />
-          </div>
-
-          <div className={styles["form4"]}>
-            <label htmlFor="email">E-mail</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              className={styles["form-input"]}
-              required
-            />
-          </div>
-
-          {/* Linha 3 */}
-          <div className={styles["form5"]}>
-            <label htmlFor="senha">Senha</label>
-            <input
-              type="password"
-              id="senha"
-              name="senha"
               className={styles["form-input"]}
               required
             />

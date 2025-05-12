@@ -1,20 +1,20 @@
 // src/App.js
 import React from 'react';
 import Header from '@/components/Header/index';
-import styles from './Register.module.css'
-import RegisterContent1 from '@/components/RegisterContent1/index'
+import styles from './Register1p.module.css'
+import RegisterContent1p from '@/components/RegisterContent1p/index'
 import Footer from '@/components/Footer/index';
 
-function Register1() {
+function Register1p() {
   return (
     <>
       <Header />
       <div className={styles["divprincipal"]}>
-      <RegisterContent1 />
+      <RegisterContent1p />
       </div>
       <Footer />
     </>
   );
 }
 
-export default Register1;
+export default Register1p;

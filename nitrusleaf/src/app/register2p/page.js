@@ -1,20 +1,20 @@
 // src/App.js
 import React from 'react';
 import Header from '@/components/Header/index';
-import styles from './Register2.module.css'
-import RegisterComponent2 from '@/components/RegisterContent2/index'
+import styles from './Register2p.module.css'
+import RegisterComponent2e from '@/components/RegisterContent2p/index'
 import Footer from '@/components/Footer/index'
 
-function Register2() {
+function Register2e() {
   return (
     <>
       <Header />
       <div className={styles["divprincipal"]}>
-      <RegisterComponent2 />
+      <RegisterComponent2e />
       </div>
       <Footer />
     </>
   );
 }
 
-export default Register2;
+export default Register2e;
