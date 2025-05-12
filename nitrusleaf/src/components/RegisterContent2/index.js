@@ -1,78 +1,98 @@
 import styles from "./RegisterContent2.module.css";
 import Link from 'next/link';
 
-
 export default function RegisterComponent2() {
   return (
     <main className={styles["main-register"]}>
       <div className={styles["box-register"]}>
-        <h5>CADASTRO</h5>
+        <h5 className={styles.h5}>CADASTRO</h5>
         <h1>Crie uma conta</h1>
-        <p className={styles["p1-register"]}>Insira seus dados</p>
-        <div className={styles["line"]}/>
+        <p className={styles["p1-register"]}>Bem vindo ao NitrusLeaf!</p>
+        <div className={styles["line"]} />
 
-        <form className={styles["form-register"]}>
-          {/* Linha 1: Nome + Sobrenome */}
-          <div className={styles["form-row"]}>
-            <div className={styles["form-group"]}>
+        <form className={styles.formo}>
+          <div className={styles["form-register"]}>
+
+            {/* Linha 1 */}
+            <div className={styles["form1"]}>
               <label htmlFor="nome">CPF</label>
               <input
                 type="text"
-                id="nome"
-                name="nome"
+                id="cpf"
+                name="cpf"
                 className={styles["form-input"]}
                 required
               />
             </div>
-            <div className={styles["form-group"]}>
-              <label htmlFor="sobrenome">Logradouro</label>
+
+            <div className={styles["form2"]}>
+              <label htmlFor="nome">CEP</label>
               <input
                 type="text"
-                id="sobrenome"
-                name="sobrenome"
+                id="cep"
+                name="cep"
+                className={styles["form-input"]}
+                required
+              />
+            </div>
+
+
+            {/* Linha 2 */}
+            <div className={styles["form3"]}>
+              <label htmlFor="logradouro">Logradouro</label>
+              <input
+                type="text"
+                id="logradouro"
+                className={styles["form-input"]}
+              />
+            </div>
+
+            <div className={styles["form4"]}>
+              <label htmlFor="numero">Número</label>
+              <input
+                type="text"
+                id="numero"
+                className={styles["form-input"]}
+              />
+            </div>
+
+            {/* Linha 3 */}
+            <div className={styles["form5"]}>
+              <label htmlFor="bairro">Bairro</label>
+              <input
+                type="text"
+                id="bairro"
+                name="bairro"
+                className={styles["form-input"]}
+                required
+              />
+            </div>
+
+            <div className={styles["form6"]}>
+              <label htmlFor="cidade">Cidade</label>
+              <input
+                type="text"
+                id="cidade"
+                name="cidade"
                 className={styles["form-input"]}
                 required
               />
             </div>
           </div>
 
-          {/* Linha 2 em diante: campos sozinhos */}
-          <div className={styles["form-group"]}>
-            <label htmlFor="telefone">Número</label>
-            <input
-              type="tel"
-              id="telefone"
-              name="telefone"
-              className={styles["form-input"]}
-              required
-            />
-          </div>
-
-          <div className={styles["form-group"]}>
-            <label htmlFor="email">Bairro</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              className={styles["form-input"]}
-              required
-            />
-          </div>
-
-          <div className={styles["form-group"]}>
-            <label htmlFor="senha">Cidade</label>
-            <input
-              type="password"
-              id="senha"
-              name="senha"
-              className={styles["form-input"]}
-              required
-            />
-          <Link to="/dashboard"><button type="submit" className={styles["auth-button"]}>Continuar</button></Link>
+          <div>
+            <Link href="/register2">
+              <button type="submit" className={styles["auth-button"]}>
+                Continuar
+              </button>
+            </Link>
           </div>
         </form>
+
+        <p className={styles["plogin"]}>
+          Já possui uma conta? <Link href="/">Entrar.</Link>
+        </p>
       </div>
-      <p className={styles["plogin"]}>Já possui uma conta?<Link to="/">Entrar.</Link></p>
     </main>
   );
 }

@@ -17,7 +17,7 @@ export default function RegisterContentB() {
         <Link href="/" className={styles.links}>
           <button className={`${styles.botaoEscolha} ${styles.b1}`}><h1 className={styles.h1botao}>Empresa</h1><p className={styles.p1botao}>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></button>
         </Link>
-        <Link href="/" className={styles.links}>
+        <Link href="/register1" className={styles.links}>
           <button className={`${styles.botaoEscolha} ${styles.b2}`}><h1 className={styles.h1botao}>Pessoal</h1><p className={styles.p1botao}>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></button>
         </Link>
         <Link href="/" className={styles.links1}>

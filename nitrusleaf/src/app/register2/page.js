@@ -7,13 +7,13 @@ import Footer from '@/components/Footer/index'
 
 function Register2() {
   return (
-    <div className="App">
+    <>
       <Header />
       <div className={styles["divprincipal"]}>
       <RegisterComponent2 />
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
 

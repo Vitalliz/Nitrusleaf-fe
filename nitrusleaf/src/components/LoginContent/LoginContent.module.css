@@ -1,6 +1,6 @@
 /* Para notebooks */
 
-@media (min-width:700) and (max-width: 1366){
+@media (min-width:700px) and (max-width: 1366px){
     .h11 {
         font-size: 2.5rem;
         font-family: "Kantumruy Pro", sans-serif;  
@@ -273,7 +273,7 @@
     } */
 
     .main{
-        margin-top: 60px;   
+        margin-top: 170px;   
         display: flex;
         align-items: center;
         flex-direction: column;

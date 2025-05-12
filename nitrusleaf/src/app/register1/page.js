@@ -2,18 +2,18 @@
 import React from 'react';
 import Header from '@/components/Header/index';
 import styles from './Register.module.css'
-import RegisterComponent1 from '@/components/RegisterContent1/index'
+import RegisterContent1 from '@/components/RegisterContent1/index'
 import Footer from '@/components/Footer/index';
 
 function Register1() {
   return (
-    <div className="App">
+    <>
       <Header />
       <div className={styles["divprincipal"]}>
-      <RegisterComponent1 />
+      <RegisterContent1 />
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
 

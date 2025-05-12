@@ -1,17 +1,20 @@
 /* Estrutura principal */
-h5{
-    color: #351102;
-    font-size: 0.6rem;
-    margin-bottom: 10px;
-}
 
-.p1-register{
+/* Para notebooks */
+@media (min-width:700px) and (max-width: 1366px){
+   .h5 {
+    color: #351102;
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+  }
+
+  .p1-register {
     margin-top: 5px;
     font-size: 0.7em;
     color: #626262;
-}
+  }
 
-.auth-button {
+  .auth-button {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -19,40 +22,38 @@ h5{
     background-color: #49A010;
     padding: 10px;
     border: none;
-    height: 36px;
     border-radius: 45px;
     width: 100%;
-    height: 34px;
+    height: 45px;
     margin-top: 16px;
     color: white;
     cursor: pointer;
     font-size: 0.9rem;
     margin-bottom: 15px;
     font-weight: 500;
-}
+  }
 
-.line {
+  .line {
     margin-top: 8px;
     width: 100%;
     height: 2px;
     background-color: #65B741;
-}
+  }
 
-.main-register {
+  .main-register {
     display: flex;
     flex-direction: column;
     height: 100%;
     align-items: center;
-    margin-top: 10px;
-}
+  }
 
-.plogin{
+  .plogin {
     margin-top: 10px;
     font-size: 0.95rem;
-    font-family: "Kantumruy Pro", sans-serif;;
-}
-  /* Caixa branca central */
-.box-register {
+    font-family: "Kantumruy Pro", sans-serif;
+  }
+
+  .box-register {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,57 +61,429 @@ h5{
     padding: 20px;
     width: 85vw;
     max-width: 500px;
-    height: auto;
     background-color: white;
     border: 2px solid #65B741;
     border-radius: 20px;
-}
-  
-  /* Formulário geral */
-.form-register {
-    width: 100%;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-  
-  /* Linha de dois campos (nome + sobrenome) */
-.form-row {
-    display: flex;
-    gap: 12px;
-    width: 100%;
-    flex-wrap: wrap;
-}
-  
-  /* Grupo de input */
-.form-group {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    min-width: 45%;
-}
-  
-  /* Rótulo */
-.form-group label {
-    font-size: 0.75rem;
-    margin-bottom: 5px;
-    font-weight: 500;
-    color: #351102;
-}
-  
-  /* Campo de entrada */
-.form-input {
+  }
+
+    /* Estilos compartilhados */
+    .form-input {
     padding: 10px;
     border: 1.5px solid #65B741;
     background-color: #FAF1E5;
     border-radius: 45px;
-    height: 34px;
+    height: 32px;
     font-size: 1rem;
     outline: none;
     transition: border 0.2s ease;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    }
+
+    .form-input:focus {
+    border-color: #65B741;
+    }
+
+  .form-register {
+    display: grid;
+    grid-template-columns: repeat(22, 1fr);
+    gap: 16px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #351102;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .form1, .form2, .form3, .form4, .form5 {
+    display: grid;
+    gap: 5px;
+  }
+
+  .form1 {
+    grid-column: span 11;
+  }
+
+  .form2 {
+    grid-column: span 11;
+  }
+
+  .form3 {
+    grid-column: span 22;
+  }
+
+  .form4 {
+    grid-column: span 22;
+  }
+
+  .form5 {
+    grid-column: span 22;
+  }
 }
-  
-.form-input:focus {
+
+@media (min-width: 1366px) and (max-width: 1440px) {
+    .h5 {
+    color: #351102;
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+  }
+
+  .p1-register {
+    margin-top: 5px;
+    font-size: 0.7em;
+    color: #626262;
+  }
+
+  .auth-button {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-color: #49A010;
+    padding: 10px;
+    border: none;
+    border-radius: 45px;
+    width: 100%;
+    height: 45px;
+    margin-top: 16px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+
+  .line {
+    margin-top: 8px;
+    width: 100%;
+    height: 2px;
+    background-color: #65B741;
+  }
+
+  .main-register {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+  }
+
+  .plogin {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    font-family: "Kantumruy Pro", sans-serif;
+  }
+
+  .box-register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+    padding: 20px;
+    width: 85vw;
+    max-width: 500px;
+    background-color: white;
+    border: 2px solid #65B741;
+    border-radius: 20px;
+  }
+
+    /* Estilos compartilhados */
+    .form-input {
+    padding: 10px;
     border: 1.5px solid #65B741;
+    background-color: #FAF1E5;
+    border-radius: 45px;
+    height: 32px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s ease;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    }
+
+    .form-input:focus {
+    border-color: #65B741;
+    }
+
+  .form-register {
+    display: grid;
+    grid-template-columns: repeat(22, 1fr);
+    gap: 16px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #351102;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .form1, .form2, .form3, .form4, .form5 {
+    display: grid;
+    gap: 5px;
+  }
+
+  .form1 {
+    grid-column: span 11;
+  }
+
+  .form2 {
+    grid-column: span 11;
+  }
+
+  .form3 {
+    grid-column: span 22;
+  }
+
+  .form4 {
+    grid-column: span 22;
+  }
+
+  .form5 {
+    grid-column: span 22;
+  }
+}
+
+/* Para desktops */
+
+@media (min-width: 1440px) and (max-width: 1920px) {
+    .h5 {
+    color: #351102;
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+  }
+
+  .p1-register {
+    margin-top: 5px;
+    font-size: 0.7em;
+    color: #626262;
+  }
+
+  .auth-button {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-color: #49A010;
+    padding: 10px;
+    border: none;
+    border-radius: 45px;
+    width: 100%;
+    height: 45px;
+    margin-top: 16px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+
+  .line {
+    margin-top: 8px;
+    width: 100%;
+    height: 2px;
+    background-color: #65B741;
+  }
+
+  .main-register {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+  }
+
+  .plogin {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    font-family: "Kantumruy Pro", sans-serif;
+  }
+
+  .box-register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+    padding: 20px;
+    width: 85vw;
+    max-width: 500px;
+    background-color: white;
+    border: 2px solid #65B741;
+    border-radius: 20px;
+  }
+
+    /* Estilos compartilhados */
+    .form-input {
+    padding: 10px;
+    border: 1.5px solid #65B741;
+    background-color: #FAF1E5;
+    border-radius: 45px;
+    height: 32px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s ease;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    }
+
+    .form-input:focus {
+    border-color: #65B741;
+    }
+
+  .form-register {
+    display: grid;
+    grid-template-columns: repeat(22, 1fr);
+    gap: 16px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #351102;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .form1, .form2, .form3, .form4, .form5 {
+    display: grid;
+    gap: 5px;
+  }
+
+  .form1 {
+    grid-column: span 11;
+  }
+
+  .form2 {
+    grid-column: span 11;
+  }
+
+  .form3 {
+    grid-column: span 22;
+  }
+
+  .form4 {
+    grid-column: span 22;
+  }
+
+  .form5 {
+    grid-column: span 22;
+  }
+}
+
+/* Para telas grandes */
+@media (min-width: 1920px) {
+    .h5 {
+    color: #351102;
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+  }
+
+  .p1-register {
+    margin-top: 5px;
+    font-size: 0.7em;
+    color: #626262;
+  }
+
+  .auth-button {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-color: #49A010;
+    padding: 10px;
+    border: none;
+    border-radius: 45px;
+    width: 100%;
+    height: 45px;
+    margin-top: 16px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+
+  .line {
+    margin-top: 8px;
+    width: 100%;
+    height: 2px;
+    background-color: #65B741;
+  }
+
+  .main-register {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+  }
+
+  .plogin {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    font-family: "Kantumruy Pro", sans-serif;
+  }
+
+  .box-register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+    padding: 20px;
+    width: 85vw;
+    max-width: 500px;
+    background-color: white;
+    border: 2px solid #65B741;
+    border-radius: 20px;
+  }
+
+    /* Estilos compartilhados */
+    .form-input {
+    padding: 10px;
+    border: 1.5px solid #65B741;
+    background-color: #FAF1E5;
+    border-radius: 45px;
+    height: 32px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s ease;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    }
+
+    .form-input:focus {
+    border-color: #65B741;
+    }
+
+  .form-register {
+    display: grid;
+    grid-template-columns: repeat(22, 1fr);
+    gap: 16px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #351102;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .form1, .form2, .form3, .form4, .form5 {
+    display: grid;
+    gap: 5px;
+  }
+
+  .form1 {
+    grid-column: span 11;
+  }
+
+  .form2 {
+    grid-column: span 11;
+  }
+
+  .form3 {
+    grid-column: span 22;
+  }
+
+  .form4 {
+    grid-column: span 22;
+  }
+
+  .form5 {
+    grid-column: span 22;
+  }
 }
