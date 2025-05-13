@@ -1,0 +1,39 @@
+.sidebar {
+  width: 70px;
+  height: 100%;
+  background-color: #fbb12c;
+  display: flex;
+  flex-direction: column;
+  grid-area: sidebar;
+  align-items: center;
+  justify-content: start;
+  padding-top: 20px;
+
+  /* removido: position: fixed; top: 0; left: 0 */
+  /* agora ela respeita o layout do grid e não sobrepõe header/footer */
+}
+
+.iconGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: center;
+}
+
+.icon {
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.15);
+}
+
+.separator {
+  width: 50%;
+  border: none;
+  border-top: 2px solid white;
+  margin: 8px 0;
+}

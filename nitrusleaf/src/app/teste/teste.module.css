@@ -1,0 +1,43 @@
+.pageLayout {
+  display: grid;
+  grid-template-rows: auto 1fr auto;         /* Header, Conteúdo, Footer */
+  grid-template-columns: 60px 1fr;           /* Sidebar (60px) + Conteúdo */
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  height: 100vh;
+}
+
+/* Header ocupa topo */
+.pageLayout > :nth-child(1) {
+  grid-area: header;
+}
+
+/* Footer ocupa parte inferior */
+.pageLayout > :last-child {
+  grid-area: footer;
+}
+
+/* Wrapper entre sidebar e conteúdo */
+.contentArea {
+  display: contents; /* permite que Sidebar e Main herdem grid-area direto do parent */
+}
+
+/* Sidebar dentro do grid */
+.sidebar {
+  grid-area: sidebar;
+  background-color: #fbb12c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding-top: 20px;
+}
+
+/* Conteúdo principal */
+.mainContent {
+  grid-area: main;
+  padding: 20px;
+  overflow-y: auto;
+}
