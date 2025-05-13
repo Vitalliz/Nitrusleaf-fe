@@ -8,8 +8,8 @@ export default function Sidebar() {
       <div className={styles.iconGroup}>
         <FaBars className={styles.icon} />
         <hr className={styles.separator} />
-        <FaHome className={styles.icon} />
-        <FaChartBar className={styles.icon} />
+        <Link href="/dashboard"><FaHome className={styles.icon} /></Link>
+        <Link href="/history"><FaChartBar className={styles.icon} /></Link>
         <FaProjectDiagram className={styles.icon} />
         <hr className={styles.separator} />
         <FaCog className={styles.icon} />

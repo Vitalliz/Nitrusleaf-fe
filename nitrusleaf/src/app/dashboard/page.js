@@ -1,20 +1,25 @@
 // src/App.js
 import React from 'react';
-import Header from '../../components/Header/index.js';
-import styles from './Dashboard.module.css'
-import DashboardContent from '../../components/DashboardContent/index.js'
-import Footer from '../../components/Footer/index.js';
+import styles from './Dashboard.module.css';
+import Sidebar from '@/components/Sidebar';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import ScanImageCard from '@/components/ScanImageCard';
+import DashboardCharts from '@/components/DashboardCharts';
 
-function Dashboard() {
+export default function Dashboard() {
   return (
-    <div className="App">
+    <div className={styles.pageLayout}>
       <Header />
-      <div className={styles["divprincipal"]}>
-      <DashboardContent />
+      <div className={styles.contentArea}>
+        <Sidebar />
+        <main className={styles.mainContent}>
+          <h1>Início</h1>
+          <ScanImageCard />
+          <DashboardCharts />
+        </main>
       </div>
       <Footer />
     </div>
   );
 }
-
-export default Dashboard;

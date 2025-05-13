@@ -1,0 +1,43 @@
+.summaryBox {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 32px 24px;
+  margin-bottom: 24px;
+  border: 2px solid #f8ecd7;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 24px 32px;
+  align-items: center;
+  justify-items: center;
+}
+
+.summaryItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 2px dashed #ccc;
+  width: 100%;
+  padding-bottom: 8px;
+}
+
+.summaryItem:nth-child(2), .summaryItem:nth-child(4) {
+  border-bottom: none;
+}
+
+.label {
+  font-size: 1.1rem;
+  color: #222;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #222;
+} 

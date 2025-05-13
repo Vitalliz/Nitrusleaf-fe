@@ -18,6 +18,9 @@ function Header() {
             <li><a href="#sobre-nos">Sobre nós</a></li>
           </ul> */}
           </div>
+        <div className={styles.avatarBox}>
+          <Image src="/images/avatar-user.png" alt="Avatar" width={48} height={48} className={styles.avatar}/>
+        </div>
       </nav>
       {/* <div className="line" /> */}
     </header>

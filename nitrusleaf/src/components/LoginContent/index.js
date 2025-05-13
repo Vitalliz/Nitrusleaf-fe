@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import styles from "./LoginContent.module.css";
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 
 export default function LoginContent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const router = useRouter();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +21,7 @@ export default function LoginContent() {
 
     // Simula login (substituir por API real)
     if (email === "admin@example.com" && password === "123456") {
-      alert("Login bem-sucedido!");
+      router.push('/dashboard');
     } else {
       setError("Credenciais inválidas.");
     }
