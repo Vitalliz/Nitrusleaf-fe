@@ -1,14 +1,13 @@
 import React from 'react';
 import Sidebar from '@/components/Sidebar';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import Header2 from '@/components/Header2';
 import TalhoesDetalhados from '@/components/TalhoesDetalhados';
 import styles from './TalhoesDetalhes.module.css';
 
 export default function TalhoesDetalhesPage() {
   return (
     <div className={styles.pageLayout}>
-      <Header />
+      <Header2 />
       <div className={styles.contentArea}>
         <Sidebar />
         <main className={styles.mainContent}>
@@ -23,7 +22,6 @@ export default function TalhoesDetalhesPage() {
           <TalhoesDetalhados />
         </main>
       </div>
-      <Footer />
     </div>
   );
 } 

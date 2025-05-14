@@ -1,7 +1,6 @@
 import React from 'react';
 import Sidebar from '@/components/Sidebar';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import Header2 from '@/components/Header2';
 import HistorySummary from '@/components/HistorySummary';
 import TalhoesTable from '@/components/TalhoesTable';
 import styles from './History.module.css';
@@ -9,7 +8,7 @@ import styles from './History.module.css';
 export default function HistoryPage() {
   return (
     <div className={styles.pageLayout}>
-      <Header />
+      <Header2 />
       <div className={styles.contentArea}>
         <Sidebar />
         <main className={styles.mainContent}>
@@ -25,7 +24,6 @@ export default function HistoryPage() {
           <TalhoesTable />
         </main>
       </div>
-      <Footer />
     </div>
   );
 } 
