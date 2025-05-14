@@ -3,24 +3,19 @@
 }
 
 .pageLayout {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 60px 1fr;
-  grid-template-areas:
-    "header header"
-    "sidebar main"
-    "footer footer";
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   background-color: #FAF0D7;
-  position: relative;
 }
 
 .contentArea {
-  display: contents;
+  display: flex;
+  flex: 1;
 }
 
 .mainContent {
-  grid-area: main;
+  flex: 1;
   padding: 20px;
   overflow-y: auto;
   display: flex;
@@ -31,11 +26,9 @@
 
 /* Garantir que o Header e Footer ocupem suas áreas corretamente */
 .pageLayout > :first-child {
-  grid-area: header;
   z-index: 1;
 }
 
 .pageLayout > :last-child {
-  grid-area: footer;
   z-index: 1;
 }

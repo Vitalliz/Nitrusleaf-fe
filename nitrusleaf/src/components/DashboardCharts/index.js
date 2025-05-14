@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './DashboardCharts.module.css';
+import Image from 'next/image'
 
 export default function DashboardCharts() {
   return (
@@ -15,7 +16,9 @@ export default function DashboardCharts() {
       <div className={styles.chartsRow}>
         <div className={styles.card}>
           <h3>Ocorrências totais de deficiências em %</h3>
-          <img src="/images/pie-chart.png" alt="Gráfico de pizza" className={styles.chartImg}/>
+          <Image src="/images/pie-chart.png" alt="Gráfico de pizza" 
+          width={150} height={150}
+          />
           <div className={styles.legend}>
             <span style={{color:'#E88239'}}>Cobre</span> | 
             <span style={{color:'#FFB534'}}>Manganês</span> | 
@@ -32,7 +35,8 @@ export default function DashboardCharts() {
               <option>Fev - 2024</option>
               <option>Mar - 2024</option>
             </select>
-            <img src="/images/bar-chart.png" alt="Gráfico de barras" className={styles.barChartImg}/>
+            <Image src="/images/bar-chart.png" alt="Gráfico de barras" 
+            className={styles.barChartImg} width={240} height={160}/>
             <div className={styles.legendBarBottom}>
               <span style={{color:'#E88239'}}>Cobre</span>
               <span style={{color:'#FFB534'}}>Manganês</span>

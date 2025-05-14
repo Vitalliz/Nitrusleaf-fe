@@ -7,12 +7,10 @@ function Header() {
     <header className={styles["header"]}>
       <nav className={styles["nav"]}>
         <div className={styles["logo"]}>
-            <a href="/#">
-              <Image src="/images/NitrusLeafLogo.svg" className={styles["logoImage"]} alt="Logo do projeto"
-              width={170}
-              height={80}
-              />
-            </a>
+            <Image src="/images/NitrusLeafLogo.svg" className={styles["logoImage"]} alt="Logo do projeto"
+            width={170}
+            height={80}
+            />
           {/* <ul>
             <li><a href="#app">Aplicativo</a></li>
             <li><a href="#sobre-nos">Sobre nós</a></li>

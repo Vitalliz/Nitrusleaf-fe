@@ -1,4 +1,4 @@
-import styles from "./RegisterContent2b.module.css";
+import styles from "./RegisterContent2p.module.css";
 import Link from 'next/link';
 
 export default function RegisterComponent2() {

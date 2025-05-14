@@ -3,7 +3,6 @@ import React from 'react';
 import styles from './Dashboard.module.css';
 import Sidebar from '@/components/Sidebar';
 import Header2 from '@/components/Header2';
-import Footer from '@/components/Footer';
 import ScanImageCard from '@/components/ScanImageCard';
 import DashboardCharts from '@/components/DashboardCharts';
 

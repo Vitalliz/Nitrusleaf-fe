@@ -1,6 +1,6 @@
 import React from 'react';
 import Sidebar from '@/components/Sidebar';
-import Header from '@/components/Header';
+import Header2 from '@/components/Header2';
 import Footer from '@/components/Footer';
 import MapContent from '@/components/MapContent/index';
 import styles from './Map.module.css';
@@ -8,7 +8,7 @@ import styles from './Map.module.css';
 export default function HistoryPage() {
   return (
     <div className={styles.pageLayout}>
-      <Header />
+      <Header2 />
       <div className={styles.contentArea}>
         <Sidebar />
         <main className={styles.mainContent}>
@@ -20,10 +20,10 @@ export default function HistoryPage() {
               <option>Propriedade 3</option>
             </select>
           </div>
+          <div className={styles.line} />
           <MapContent />
         </main>
       </div>
-      <Footer />
     </div>
   );
 } 

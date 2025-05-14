@@ -1,6 +1,6 @@
 import styles from "./RegisterContentB.module.css"
 import Link from 'next/link';
-
+import Image from 'next/image'
 
 export default function RegisterContentB() {
   
@@ -22,7 +22,7 @@ export default function RegisterContentB() {
         </Link>
         <Link href="/" className={styles.links1}>
           <div className={styles.auth_button}>
-          <img src="/images/voltar.svg" alt="Voltar" className={styles.imagem}/><p className={styles.voltar}>Voltar</p>
+          <Image src="/images/voltar.svg" alt="Voltar" className={styles.imagem} width={17} height={17}/><p className={styles.voltar}>Voltar</p>
           </div>
         </Link>
         </div>
