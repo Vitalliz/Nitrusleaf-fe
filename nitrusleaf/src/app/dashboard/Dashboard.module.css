@@ -1,3 +1,41 @@
 .divprincipal {
     flex: 1;
 }
+
+.pageLayout {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 60px 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  min-height: 100vh;
+  background-color: #FAF0D7;
+  position: relative;
+}
+
+.contentArea {
+  display: contents;
+}
+
+.mainContent {
+  grid-area: main;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 0;
+}
+
+/* Garantir que o Header e Footer ocupem suas áreas corretamente */
+.pageLayout > :first-child {
+  grid-area: header;
+  z-index: 1;
+}
+
+.pageLayout > :last-child {
+  grid-area: footer;
+  z-index: 1;
+}
