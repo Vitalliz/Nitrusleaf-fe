@@ -1,0 +1,32 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    border: 1px solid #f6c989;
+    border-radius: 10px;
+    padding: 2rem;
+    background-color: white;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px dashed #aaa;
+    padding-bottom: 1rem;
+  }
+  
+  .label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .valor {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
