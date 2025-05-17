@@ -1,47 +1,23 @@
 "use client";
-import React, { useState } from "react";
-import styles from "./ListaPes.module.css";
-import { ChevronDown, ChevronRight } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import styles from "./ContentListaPes.module.css";
+import { ChevronDown, ChevronRight, TextSearch } from "lucide-react";
+import axios from "axios";
 
-const dados = [
-  {
-    nome: "Pé 1",
-    status: "Não Tratado",
-    cor: styles.amarelo,
-    data: "10/11/2024",
-    percentual: 20,
-  },
-  {
-    nome: "Pé 2",
-    status: "Tratado",
-    cor: styles.roxo,
-    data: "10/11/2024",
-    percentual: 90,
-  },
-  {
-    nome: "Pé 3",
-    status: "Tratado",
-    cor: styles.roxo,
-    data: "15/11/2024",
-    percentual: 70,
-  },
-  {
-    nome: "Pé 4",
-    status: "Sem informações",
-    cor: styles.cinza,
-    data: "10/11/2024",
-    percentual: 0,
-  },
-  {
-    nome: "Pé 5",
-    status: "Sem informações",
-    cor: styles.cinza,
-    data: "10/11/2024",
-    percentual: 0,
-  },
-];
 
 export default function ListaPes() {
+    function getStatusColor(cor) {
+  switch (cor?.toLowerCase()) {
+    case 'Sem Informações':
+      return <span className={styles.statusSemInfo}></span>
+    case 'Não Tratado':
+      return <span className={styles.statusNaoTratado}></span>
+    case 'Tratado':
+      return <span className={styles.statusTratado}></span>
+    default:
+      return styles.statusDesconhecido;
+  }
+}
   const [dropdownAberto, setDropdownAberto] = useState(null);
   const toggleDropdown = (index) => {
     setDropdownAberto(dropdownAberto === index ? null : index);
@@ -136,14 +112,38 @@ export default function ListaPes() {
     );
   };
 
+  const [TextSearch, setTextSearch] = useState("");
+  const [Data, setData] = useState([]);
+  const [DadosFiltrados, setDadosFiltrados] = useState([]);
+  useEffect(() => {
+    // API TESTE
+    // Colocar url da API do Nitrusleaf oficial
+    async function getData() {
+      const result = await axios.get("http://localhost:3001/talhao");
+      setData(result.data)
+      setDadosFiltrados(result.data)
+    }
+    getData();
+  }, [])
+
+  function filtrarPe(e) {
+    setTextSearch(e.target.value)
+  }
+
+  function iconDados() {
+    let newData = Data.filter((pe) => pe.nome == TextSearch)
+    setDadosFiltrados(newData.length ? newData : Data);
+  }
+
+
   return (
     <div className={styles.container}>
       <div className={styles.topBar}>
         <div>
           <label className={styles.label}>Pesquisar</label>
           <div className={styles.searchBox}>
-            <Input placeholder="Pesquisar registros" className={styles.input} />
-            <span className={styles.searchIcon}>
+            <Input placeholder="Pesquisar registros" value={TextSearch} onChange={e => filtrarPe(e)} className={styles.input} />
+            <span className={styles.searchIcon} onClick={iconDados}>
               <svg
                 width="20"
                 height="20"
@@ -188,11 +188,11 @@ export default function ListaPes() {
               </tr>
             </thead>
             <tbody>
-              {dados.map((item, idx) => (
+              {DadosFiltrados.map((item, idx) => (
                 <tr key={idx} className={styles.tr}>
                   <td className={styles.tdNome}>{item.nome}</td>
                   <td className={styles.tdStatus}>
-                    <span className={`${styles.statusDot} ${item.cor}`}></span>
+                    <span className={`${styles.statusDot} ${getStatusColor(item.cor)}`}></span>
                     {item.status}
                   </td>
                   <td className={styles.td}>{item.data}</td>
@@ -226,7 +226,9 @@ export default function ListaPes() {
                       size={22}
                       strokeWidth={4}
                     />
-                    <ChevronRight size={20} />
+                    <a href={`./Pe/index.js`} className={styles.acaoRelatorio}>
+                      <ChevronRight size={16} />
+                    </a>
                   </td>
                 </tr>
               ))}

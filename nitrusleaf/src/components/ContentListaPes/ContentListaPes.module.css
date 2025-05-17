@@ -3,13 +3,17 @@
   font-family: Arial, sans-serif;
   background-color: #ffffff;
   border-radius: 10px;
+  border: 1px solid #FFDAA9;
 }
 
 .topBar {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #FFDAA9;
 }
 
 .label {
@@ -18,16 +22,19 @@
   margin-bottom: 0.5rem;
 }
 
+
 .searchBox {
   position: relative;
   display: flex;
   align-items: center;
+  border-bottom: #000;
 }
 
 .inputBase {
   padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 0.375rem;
+  border: 1px solid #E2D0B8;
+  border-radius: 5px;
+  background-color: #FFFFFF;
   width: 250px;
 }
 
@@ -182,6 +189,7 @@
 
 .editarButton {
   white-space: nowrap;
+  width: 100px;
   background-color: #e3e3e3;
   border: none;
   border-radius: 5px;
@@ -224,4 +232,20 @@
   margin-top: 1rem;
   text-align: center;
   color: #6b7280;
+}
+
+.acaoRelatorio{
+   color: #000;
+}
+
+.statusSemInfo { background-color: gray; }
+.statusNaoTratado { background-color: red; }
+.statusTratado { background-color: green; }
+.statusDesconhecido { background-color: #ccc; }
+.statusDot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
 }
