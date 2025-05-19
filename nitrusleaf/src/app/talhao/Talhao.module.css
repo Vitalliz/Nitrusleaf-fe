@@ -1,0 +1,38 @@
+.divprincipaltalhao {
+    flex: 1;
+    align-content: baseline;
+}
+.divprincipal {
+    flex: 1;
+}
+
+.pageLayout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #FAF0D7;
+}
+
+.contentArea {
+  display: flex;
+  flex: 1;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 0;
+}
+
+/* Garantir que o Header e Footer ocupem suas áreas corretamente */
+.pageLayout > :first-child {
+  z-index: 1;
+}
+
+.pageLayout > :last-child {
+  z-index: 1;
+}

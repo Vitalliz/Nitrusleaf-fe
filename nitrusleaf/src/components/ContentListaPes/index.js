@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./ContentListaPes.module.css";
 import { ChevronDown, ChevronRight, TextSearch } from "lucide-react";
 import axios from "axios";
+import Navbar from "../Navbar";
 
 
 export default function ListaPes() {
@@ -137,6 +138,8 @@ export default function ListaPes() {
 
 
   return (
+    <>
+    <Navbar/>
     <div className={styles.container}>
       <div className={styles.topBar}>
         <div>
@@ -238,5 +241,6 @@ export default function ListaPes() {
         </CardContent>
       </Card>
     </div>
+    </>
   );
 }
