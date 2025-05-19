@@ -19,8 +19,9 @@ export const AuthProvider = ({ children }) => {
 
       try {
         await refreshAccessToken();
-        const userResponse = await api.get("/api/auth/me");
-        const propriedadesResponse = await api.get(`/api/propriedades/${userResponse.data.id}`);
+        const userResponse = await api.get("/auth/me");
+        console.log(userResponse.data)
+        const propriedadesResponse = await api.get(`/propriedades/user/${userResponse.data.id}`);
 
         const propriedades = propriedadesResponse.data.sort((a, b) => a.id_propriedade - b.id_propriedade);
 
@@ -51,7 +52,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem("refreshToken", data.refreshToken);
       api.defaults.headers.Authorization = `Bearer ${data.accessToken}`;
 
-      const propriedadesResponse = await api.get(`/api/propriedades/${data.usuario.id}`);
+      const propriedadesResponse = await api.get(`/propriedades/user/${data.pessoa.id}`);
       const propriedades = propriedadesResponse.data.sort((a, b) => a.id_propriedade - b.id_propriedade);
 
       setUser({ ...data.usuario, propriedades });
