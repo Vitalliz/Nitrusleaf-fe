@@ -1,10 +1,11 @@
 // src/app/layout.js
-import './globals.css'
+import './globals.css';
+import { AuthProvider } from '@/contexts/AuthContext';
 
 export const metadata = {
   title: 'Nitrus Leaf',
   description: 'Plataforma Nitrus Leaf',
-}
+};
 
 export default function RootLayout({ children }) {
   return (
@@ -17,7 +18,11 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className="layout">{children}</body>
+      <body className="layout">
+        <AuthProvider>
+          {children}
+        </AuthProvider>
+      </body>
     </html>
-  )
+  );
 }
