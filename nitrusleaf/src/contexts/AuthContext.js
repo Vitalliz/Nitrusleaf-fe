@@ -1,17 +1,21 @@
+// src/contexts/AuthContext.js
 "use client";
 
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useContext } from "react";
 import api from "@/services/api";
 import { useRouter } from "next/navigation";
 
 export const AuthContext = createContext();
+
+export const useAuth = () => {
+  return useContext(AuthContext);
+};
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [selectedProperty, setSelectedProperty] = useState(null);
   const router = useRouter();
 
-  // 🚀 Carregar usuário e propriedades ao iniciar
   useEffect(() => {
     const loadUser = async () => {
       const token = localStorage.getItem("accessToken");
@@ -19,13 +23,11 @@ export const AuthProvider = ({ children }) => {
 
       try {
         await refreshAccessToken();
-        const userResponse = await api.get("/auth/me");
-        console.log(userResponse.data)
-        const propriedadesResponse = await api.get(`/propriedades/user/${userResponse.data.id}`);
-
-        const propriedades = propriedadesResponse.data.sort((a, b) => a.id_propriedade - b.id_propriedade);
-
-        setUser({ ...userResponse.data, propriedades });
+        const { data } = await api.get("/auth/me");
+        
+        const user = data.user;
+        const propriedades = data.propriedades;
+        setUser({ ...user, propriedades });
 
         const storedProperty = localStorage.getItem("selectedProperty");
         if (storedProperty) {
@@ -43,17 +45,14 @@ export const AuthProvider = ({ children }) => {
     loadUser();
   }, []);
 
-  // 🚀 Função para fazer login
   const handleLogin = async (email, password) => {
     try {
       const { data } = await api.post("/auth/login", { email, senha: password });
-
       localStorage.setItem("accessToken", data.accessToken);
       localStorage.setItem("refreshToken", data.refreshToken);
       api.defaults.headers.Authorization = `Bearer ${data.accessToken}`;
 
-      const propriedadesResponse = await api.get(`/propriedades/user/${data.pessoa.id}`);
-      const propriedades = propriedadesResponse.data.sort((a, b) => a.id_propriedade - b.id_propriedade);
+      const propriedades = data.propriedades.sort((a, b) => a.id_propriedade - b.id_propriedade);
 
       setUser({ ...data.usuario, propriedades });
 
@@ -71,7 +70,6 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // 🚀 Função para logout
   const handleLogout = () => {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
@@ -81,7 +79,6 @@ export const AuthProvider = ({ children }) => {
     router.push("/");
   };
 
-  // 🚀 Função para renovar o token automaticamente
   const refreshAccessToken = async () => {
     try {
       const refreshToken = localStorage.getItem("refreshToken");
@@ -97,7 +94,6 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // 🚀 Função para trocar propriedade
   const changeProperty = (propertyId) => {
     const property = user?.propriedades?.find((prop) => prop.id_propriedade === parseInt(propertyId));
     if (property) {

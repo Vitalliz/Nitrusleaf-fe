@@ -65,11 +65,12 @@ export default function DashboardCharts() {
           value={selectedProperty?.id_propriedade || ""}
         >
           <option value="" disabled>Selecionar Propriedade</option>
-          {user?.propriedades?.map((prop) => (
-            <option key={prop.id_propriedade} value={prop.id_propriedade}>
-              {prop.nome}
-            </option>
-          ))}
+          {Array.isArray(user?.propriedades) && user.propriedades.map((prop) => (
+  <option key={prop.id_propriedade} value={prop.id_propriedade}>
+    {prop.nome}
+  </option>
+))}
+
         </select>
       </div>
       <div className={styles.chartsRow}>
