@@ -1,4 +1,3 @@
-// src/components/DashboardCharts/index.js
 "use client";
 import React, { useEffect, useState, useContext } from "react";
 import { Pie, Bar } from "react-chartjs-2";
@@ -9,20 +8,20 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearSca
 
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement);
 
-export default function DashboardCharts() {
+  export default function DashboardCharts() {
   const { user, selectedProperty, changeProperty } = useContext(AuthContext);
   const [pieData, setPieData] = useState(null);
   const [barData, setBarData] = useState(null);
 
   useEffect(() => {
-    if (selectedProperty) {
+    if (selectedProperty?.id_propriedade) {
       fetchData(selectedProperty.id_propriedade);
     }
   }, [selectedProperty]);
 
   const fetchData = async (propertyId) => {
     try {
-      const response = await api.get(`/api/dashboard/${propertyId}`);
+      const response = await api.get(`/dashboard/${propertyId}`);
       const { pieChartData, barChartData } = response.data;
 
       setPieData({
@@ -52,8 +51,14 @@ export default function DashboardCharts() {
       });
     } catch (error) {
       console.error("Erro ao buscar os dados:", error);
+      setPieData(null);
+      setBarData(null);
     }
   };
+
+  if (!user || !Array.isArray(user.propriedades) || user.propriedades.length === 0) {
+    return <p>Você não possui propriedades cadastradas.</p>;
+  }
 
   return (
     <section>
@@ -61,16 +66,15 @@ export default function DashboardCharts() {
         <h2 className={styles.title}>Análises Gerais</h2>
         <select 
           className={styles.selectPropriedade} 
-          onChange={(e) => changeProperty(e.target.value)} 
+          onChange={(e) => changeProperty(parseInt(e.target.value))} 
           value={selectedProperty?.id_propriedade || ""}
         >
-          <option value="" disabled>Selecionar Propriedade</option>
-          {Array.isArray(user?.propriedades) && user.propriedades.map((prop) => (
-  <option key={prop.id_propriedade} value={prop.id_propriedade}>
-    {prop.nome}
-  </option>
-))}
-
+          <option value={selectedProperty.id || ""} disabled>{selectedProperty?.nome || "Selecionar Propriedade"}</option>
+          {user.propriedades.map((prop) => (
+            <option key={prop.id_propriedade} value={prop.id_propriedade}>
+              {prop.nome}
+            </option>
+          ))}
         </select>
       </div>
       <div className={styles.chartsRow}>

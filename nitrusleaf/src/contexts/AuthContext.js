@@ -15,20 +15,22 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [selectedProperty, setSelectedProperty] = useState(null);
   const router = useRouter();
-
+  
   useEffect(() => {
     const loadUser = async () => {
       const token = localStorage.getItem("accessToken");
       if (!token) return;
 
       try {
-        await refreshAccessToken();
+        // await refreshAccessToken();
         const { data } = await api.get("/auth/me");
         
         const user = data.user;
         const propriedades = data.propriedades;
+        console.log(user)
+        console.log(propriedades)
         setUser({ ...user, propriedades });
-
+        setSelectedProperty(propriedades[0]); // seleciona a primeira propriedade para mostrar
         const storedProperty = localStorage.getItem("selectedProperty");
         if (storedProperty) {
           setSelectedProperty(JSON.parse(storedProperty));
@@ -79,37 +81,44 @@ export const AuthProvider = ({ children }) => {
     router.push("/");
   };
 
-  const refreshAccessToken = async () => {
-    try {
-      const refreshToken = localStorage.getItem("refreshToken");
-      if (!refreshToken) throw new Error("Refresh token não encontrado.");
+  // const refreshAccessToken = async () => {
+  //   try {
+  //     const refreshToken = localStorage.getItem("refreshToken");
+  //     if (!refreshToken) throw new Error("Refresh token não encontrado.");
 
-      const { data } = await api.post("/auth/refresh", { refreshToken });
-      localStorage.setItem("accessToken", data.accessToken);
-      api.defaults.headers.Authorization = `Bearer ${data.accessToken}`;
-      setUser((prev) => ({ ...prev, token: data.accessToken }));
-    } catch (error) {
-      console.error("Erro ao renovar token:", error);
-      handleLogout();
-    }
-  };
+  //     const { data } = await api.post("/auth/refresh", { refreshToken });
+  //     localStorage.setItem("accessToken", data.accessToken);
+  //     api.defaults.headers.Authorization = `Bearer ${data.accessToken}`;
+  //     setUser((prev) => ({ ...prev, token: data.accessToken }));
+  //   } catch (error) {
+  //     console.error("Erro ao renovar token:", error);
+  //     handleLogout();
+  //   }
+  // };
 
-  const changeProperty = (propertyId) => {
-    const property = user?.propriedades?.find((prop) => prop.id_propriedade === parseInt(propertyId));
-    if (property) {
-      setSelectedProperty(property);
-      localStorage.setItem("selectedProperty", JSON.stringify(property));
-    }
-  };
+ // src/contexts/AuthContext.js
+const changeProperty = (propertyId) => {
+  const property = user?.propriedades?.find(
+    (prop) => prop.id_propriedade === parseInt(propertyId)
+  );
+
+  if (property) {
+    setSelectedProperty(property);
+    localStorage.setItem("selectedProperty", JSON.stringify(property));
+  } else {
+    console.error("Propriedade não encontrada:", propertyId);
+  }
+};
+
 
   return (
     <AuthContext.Provider 
-      value={{ 
-        user, 
-        selectedProperty, 
+      value={{  
+        user,   
+        selectedProperty,
         handleLogin, 
         handleLogout, 
-        refreshAccessToken, 
+        // refreshAccessToken, 
         changeProperty 
       }}
     >
