@@ -9,7 +9,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearSca
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement);
 
   export default function DashboardCharts() {
-  const { user, selectedProperty, changeProperty } = useContext(AuthContext);
+  const { user, selectedProperty, changeProperty, propertysUser } = useContext(AuthContext);
   const [pieData, setPieData] = useState(null);
   const [barData, setBarData] = useState(null);
 
@@ -60,22 +60,34 @@ ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarEle
     return <p>Você não possui propriedades cadastradas.</p>;
   }
 
+  console.log(user.propriedades);
+  console.log("selectedProperty", selectedProperty)
   return (
     <section>
       <div className={styles.titleRow}>
         <h2 className={styles.title}>Análises Gerais</h2>
-        <select 
-          className={styles.selectPropriedade} 
-          onChange={(e) => changeProperty(parseInt(e.target.value))} 
-          value={selectedProperty?.id_propriedade || ""}
-        >
-          <option value={selectedProperty.id || ""} disabled>{selectedProperty?.nome || "Selecionar Propriedade"}</option>
-          {user.propriedades.map((prop) => (
+        <select
+        className={styles.selectPropriedade}
+        onChange={(e) => {
+          const value = e.target.value;
+          if (value === "") return; // Ignorar placeholder
+          changeProperty(parseInt(value, 10));
+        }}
+        value={selectedProperty?.id_propriedade || ""}
+      >
+        <option key="placeholder" value="" disabled>
+          {selectedProperty?.nome || "Selecionar Propriedade"}
+        </option>
+        {user.propriedades
+          .filter(prop => prop.id_propriedade === selectedProperty?.id_propriedade)
+          .map((prop) => (
             <option key={prop.id_propriedade} value={prop.id_propriedade}>
               {prop.nome}
             </option>
           ))}
-        </select>
+      </select>
+
+
       </div>
       <div className={styles.chartsRow}>
         <div className={styles.card}>

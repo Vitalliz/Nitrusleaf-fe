@@ -47,6 +47,17 @@ export const AuthProvider = ({ children }) => {
     loadUser();
   }, []);
 
+
+  const propertysUser = async () => {
+    try {
+      const { data } = await api.get("/auth/me")
+      const propriedades = data.propriedades
+      return propriedades
+    }catch(error) {
+      console.log("Erro ao buscar propriedadades", error)
+    }
+  }
+
   const handleLogin = async (email, password) => {
     try {
       const { data } = await api.post("/auth/login", { email, senha: password });
@@ -96,19 +107,23 @@ export const AuthProvider = ({ children }) => {
   //   }
   // };
 
- // src/contexts/AuthContext.js
-const changeProperty = (propertyId) => {
-  const property = user?.propriedades?.find(
-    (prop) => prop.id_propriedade === parseInt(propertyId)
-  );
+  const changeProperty = (propertyId) => {
+    if (isNaN(propertyId)) {
+      console.error("ID da propriedade inválido:", propertyId);
+      return;
+    }
+    const property = user?.propriedades?.find(
+      (prop) => prop.id_propriedade === propertyId
+    );
 
-  if (property) {
-    setSelectedProperty(property);
-    localStorage.setItem("selectedProperty", JSON.stringify(property));
-  } else {
-    console.error("Propriedade não encontrada:", propertyId);
-  }
-};
+    if (property) {
+      setSelectedProperty(property);
+      localStorage.setItem("selectedProperty", JSON.stringify(property));
+    } else {
+      console.error("Propriedade não encontrada:", propertyId);
+    }
+  };
+
 
 
   return (
@@ -117,7 +132,8 @@ const changeProperty = (propertyId) => {
         user,   
         selectedProperty,
         handleLogin, 
-        handleLogout, 
+        handleLogout,
+        propertysUser, 
         // refreshAccessToken, 
         changeProperty 
       }}
