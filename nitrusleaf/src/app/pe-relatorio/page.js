@@ -1,10 +1,10 @@
 import React from 'react';
 import Sidebar from '@/components/Sidebar';
 import Header2 from '@/components/Header2';
-import styles from './PeRelatorios.module.css';
-import PeRelatoriosContent from '@/components/PeRelatoriosContent/index'; // novo componente para o detalhe do pé
+import styles from './PeRelatorio.module.css';
+import PeRelatorioContent from '@/components/PeRelatorioContent/index'; // novo componente para o detalhe do pé
 
-export default function PeRelatorios() {
+export default function PeRelatorio() {
   return (
     <div className={styles.pageLayout}>
       <Header2 />
@@ -20,7 +20,7 @@ export default function PeRelatorios() {
             </button>
           </div>
           <div className={styles.line} />
-          <PeRelatoriosContent />
+          <PeRelatorioContent />
         </main>
       </div>
     </div>

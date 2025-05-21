@@ -1,0 +1,166 @@
+.container {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px 32px 40px 32px;
+  box-shadow: 0 2px 8px #0001;
+  border: 1.5px solid #f8ecd7;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #fbb12c;
+  padding-bottom: 8px;
+  text-align: left;
+}
+
+.scanBtn {
+  background-color: #49a010;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 20px 48px; /* mais alto e um pouco menos largo */
+  font-weight: 700;
+  font-size: 1.25rem;
+  cursor: pointer;
+  margin: 0 auto 32px;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+
+.scanBtn:hover {
+  background-color: #388a0c;
+}
+
+.separator {
+  border: none;
+  border-top: 1px solid #fbb12c;
+  margin: 0 0 32px 0;
+}
+
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+  max-width: 400px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+.badgeCobre {
+  background-color: #d24818;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.percentual {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.percentCircle {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.svgCircle {
+  transform: rotate(-90deg);
+  overflow: visible;
+}
+
+.circleBackground {
+  stroke: #ddd;
+}
+
+.circleProgress {
+  transition: stroke-dashoffset 0.5s ease;
+  stroke-linecap: round;
+  stroke: #d32f2f;
+}
+
+.percentSymbol {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+  font-size: 1rem;
+  color: #222;
+}
+
+.locationColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 300px;
+  margin-bottom: 32px;
+}
+
+.locationItem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.selectInput {
+  padding: 6px 10px;
+  border: 1px solid #49a010;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  min-width: 160px;
+  cursor: pointer;
+}
+
+.relatorioSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.textarea {
+  min-height: 120px;
+  border: 1px solid #49a010;
+  border-radius: 8px;
+  padding: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  resize: none;
+  color: #222;
+}
+
+.locationWrapper {
+  margin-bottom: 32px;
+}
+
+.locationTitle {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  display: block;
+}

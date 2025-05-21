@@ -108,21 +108,18 @@ export const AuthProvider = ({ children }) => {
   // };
 
   const changeProperty = (propertyId) => {
-    if (isNaN(propertyId)) {
-      console.error("ID da propriedade inválido:", propertyId);
-      return;
-    }
-    const property = user?.propriedades?.find(
-      (prop) => prop.id_propriedade === propertyId
-    );
-
-    if (property) {
-      setSelectedProperty(property);
-      localStorage.setItem("selectedProperty", JSON.stringify(property));
-    } else {
-      console.error("Propriedade não encontrada:", propertyId);
-    }
-  };
+  if (isNaN(propertyId)) {
+    console.error("ID da propriedade inválido:", propertyId);
+    return;
+  }
+  const property = user?.propriedades?.find((prop) => prop.id === propertyId);
+  if (property) {
+    setSelectedProperty(property);
+    localStorage.setItem("selectedProperty", JSON.stringify(property));
+  } else {
+    console.error("Propriedade não encontrada:", propertyId);
+  }
+};
 
 
 

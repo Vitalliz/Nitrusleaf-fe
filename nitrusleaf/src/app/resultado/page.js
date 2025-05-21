@@ -1,10 +1,10 @@
 import React from 'react';
 import Sidebar from '@/components/Sidebar';
 import Header2 from '@/components/Header2';
-import styles from './PeRelatorios.module.css';
-import PeRelatoriosContent from '@/components/PeRelatoriosContent/index'; // novo componente para o detalhe do pé
+import styles from './Resultado.module.css';
+import ResultadoContent from '@/components/ResultadoContent/index'; // novo componente para o detalhe do pé
 
-export default function PeRelatorios() {
+export default function Resultado() {
   return (
     <div className={styles.pageLayout}>
       <Header2 />
@@ -13,14 +13,11 @@ export default function PeRelatorios() {
         <main className={styles.mainContent}>
           <div className={styles.titleRow}>
             <h1>
-              Histórico &gt; Talhões &gt; <strong>Talhão 1</strong>
+              Resultados
             </h1>
-            <button className={styles.editTalhaoBtn} type="button">
-              <span>✏️</span> Editar Talhão
-            </button>
           </div>
           <div className={styles.line} />
-          <PeRelatoriosContent />
+          <ResultadoContent />
         </main>
       </div>
     </div>

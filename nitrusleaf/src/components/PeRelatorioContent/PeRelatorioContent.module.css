@@ -1,0 +1,297 @@
+.container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 24px 32px;
+  border: 1.5px solid #f8ecd7;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.voltarBtn {
+  background-color: #49a010;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+
+.voltarBtn:hover {
+  background-color: #388a0c;
+}
+
+.tituloH2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 0 12px 0 0;
+  color: #222;
+  white-space: nowrap;
+  flex-grow: 1;
+  min-width: 160px;
+}
+
+.exportarBtn {
+  background-color: #aaa;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+
+.exportarBtn:hover {
+  background-color: #888;
+}
+
+.exportIcon {
+  font-size: 1.2rem;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.editarBtn {
+  background-color: #49a010;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.3s;
+}
+
+.editarBtn:hover {
+  background-color: #388a0c;
+}
+
+.apagarBtn {
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.3s;
+}
+
+.apagarBtn:hover {
+  background-color: #b02828;
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: #fbb12c;
+  margin-bottom: 16px;
+}
+
+.infoRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.infoItem {
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.badgeCobre {
+  background-color: #d24818;
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.badgeTratado {
+  background-color: #6f63ff;
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.verLocalizacaoBtn {
+  background-color: #49a010;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;
+  transition: background-color 0.3s;
+}
+
+.verLocalizacaoBtn:hover {
+  background-color: #388a0c;
+}
+
+.percentual {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #222;
+}
+
+.percentNumber {
+  min-width: 40px;
+  text-align: right;
+}
+
+.percentCircle {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.svgCircle {
+  transform: rotate(-90deg);
+  overflow: visible;
+}
+
+.circleBackground {
+  stroke: #ddd;
+}
+
+.circleProgress {
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.percentSymbol {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+  font-size: 1rem;
+  color: #222;
+}
+
+.relatorioHeader {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.dataRelatorio {
+  color: #555;
+}
+
+.relatorioTexto {
+  background-color: #f1f1f1;
+  border-radius: 12px;
+  padding: 20px 24px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #222;
+  line-height: 1.5;
+}
+
+.link1 {
+  text-decoration: none;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  gap: 32px;
+  flex-wrap: nowrap;
+}
+
+.infoLeftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.infoItem {
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.verLocalizacaoBtn {
+  background-color: #49a010;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;
+  transition: background-color 0.3s;
+  width: fit-content;
+}
+
+.verLocalizacaoBtn:hover {
+  background-color: #388a0c;
+}
+
+.percentual {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #222;
+}
