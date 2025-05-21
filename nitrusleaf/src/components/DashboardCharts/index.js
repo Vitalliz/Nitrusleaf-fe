@@ -24,6 +24,23 @@ ChartJS.register(
   BarElement
 );
 
+function formatMonthLabel(label) {
+  if (!label) return "";
+  const [year, month] = label.split("-");
+  if (!year || !month) return label;
+  const date = new Date(year, parseInt(month, 10) - 1);
+
+  // Pega a string curta do mês em pt-BR (ex: "dez.")
+  let shortMonth = date.toLocaleString("pt-BR", { month: "short" });
+
+  // Remove o ponto final, se existir
+  shortMonth = shortMonth.replace(".", "");
+
+  // Coloca a primeira letra maiúscula e o restante minúsculo
+  return shortMonth.charAt(0).toUpperCase() + shortMonth.slice(1).toLowerCase();
+}
+
+
 export default function DashboardCharts() {
   const { user, selectedProperty, changeProperty } = useContext(AuthContext);
 
@@ -70,8 +87,11 @@ export default function DashboardCharts() {
         ],
       });
 
+      // Aplica formatação de mês abreviado nas labels mensais
+      const formattedLabels = monthlyBarChartData.labels.map(formatMonthLabel);
+
       setMonthlyBarData({
-        labels: monthlyBarChartData.labels,
+        labels: formattedLabels,
         datasets: [
           { label: "Cobre", data: monthlyBarChartData.cobre, backgroundColor: "#E88239" },
           { label: "Manganês", data: monthlyBarChartData.manganes, backgroundColor: "#FFB534" },
@@ -91,7 +111,7 @@ export default function DashboardCharts() {
       y: {
         ticks: {
           stepSize: 1,
-          // Mostra apenas valores inteiros
+          // Mostra só valores inteiros no eixo Y
           callback: (value) => Number.isInteger(value) ? value : null,
         },
       },

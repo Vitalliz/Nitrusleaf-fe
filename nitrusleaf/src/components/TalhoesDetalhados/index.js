@@ -1,13 +1,46 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styles from './TalhoesDetalhados.module.css';
+import { AuthContext } from '@/contexts/AuthContext';  // Usar contexto para propriedade selecionada
+import api from '@/services/api';
 
 export default function TalhoesDetalhados() {
   const [openMenu, setOpenMenu] = useState(null);
+  const [talhoes, setTalhoes] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const { selectedProperty } = useContext(AuthContext);
+
+  useEffect(() => {
+    if (!selectedProperty) return;
+
+    setLoading(true);
+    api.get(`/talhoes?fk_id_propriedade=${selectedProperty.id}`)  // Ajuste sua rota API conforme necessário
+      .then(res => {
+        setTalhoes(res.data);
+      })
+      .catch(err => {
+        console.error("Erro ao buscar talhões:", err);
+        setTalhoes([]);
+      })
+      .finally(() => setLoading(false));
+  }, [selectedProperty]);
 
   const handleMenu = (index) => {
     setOpenMenu(openMenu === index ? null : index);
   };
+
+  if (!selectedProperty) {
+    return <p>Por favor, selecione uma propriedade.</p>;
+  }
+
+  if (loading) {
+    return <p>Carregando talhões...</p>;
+  }
+
+  if (talhoes.length === 0) {
+    return <p>Nenhum talhão encontrado para a propriedade "{selectedProperty.nome}".</p>;
+  }
 
   return (
     <section className={styles.container}>
@@ -28,19 +61,17 @@ export default function TalhoesDetalhados() {
             <tr>
               <th>Nome Talhão</th>
               <th>Pés analisados</th>
-              <th>Data de Criação</th>
               <th>Diagnósticos</th>
               <th>Status</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
-            {[1,2,3].map((item, idx) => (
-              <tr key={idx}>
-                <td>{`Talhão ${item}`}</td>
-                <td>{item === 1 ? '27/32' : item === 2 ? '13/24' : '12/26'}</td>
-                <td>13/05/2025</td>
-                <td>{item === 1 ? '12 cobre, 15 manganês' : item === 2 ? '6 cobre, 7 manganês' : '5 cobre, 7 manganês'}</td>
+            {talhoes.map((talhao, idx) => (
+              <tr key={talhao.id_talhao || idx}>
+                <td>{talhao.nome || `Talhão ${idx + 1}`}</td>
+                <td>{talhao.pes_analisados || '0/0'}</td> {/* Ajuste conforme dados da API */}
+                <td>{talhao.diagnosticos || '-'}</td> {/* Ajuste conforme dados da API */}
                 <td><span className={styles.statusActive}>Ativo</span></td>
                 <td className={styles.menuTd}>
                   <div className={styles.menuWrapper}>
@@ -71,4 +102,4 @@ export default function TalhoesDetalhados() {
       </div>
     </section>
   );
-} 
+}

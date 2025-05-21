@@ -1,42 +1,35 @@
 "use client";
-import React from "react";
-import styles from "./PeRelatoriosContent.module.css";
+import React from 'react';
 import Link from 'next/link';
+import styles from './PeRelatoriosContent.module.css';
 
-export default function PeRelatoriosContent() {
-  const relatorios = [
-    { descricao: "Primeiro relatório", data: "10/11/2024" },
-    { descricao: "Influência Externa", data: "22/12/2024" },
-  ];
+export default function PeRelatoriosContent({ relatorios, peId }) {
+  if (!relatorios || relatorios.length === 0) {
+    return <p>Nenhum relatório encontrado para este pé.</p>;
+  }
 
   return (
     <section className={styles.container}>
       <header className={styles.header}>
-        <Link href='talhao-pes' className={styles.link1}>
-        <button className={styles.voltarBtn} type="button" aria-label="Voltar">
-          ← Voltar
-        </button>
+        <Link href={`/talhao-pes`}>
+          <button className={styles.voltarBtn} type="button" aria-label="Voltar">
+            ← Voltar
+          </button>
         </Link>
-        <h2 className={styles.tituloH2}>Pé 2</h2>
+        <h2 className={styles.tituloH2}>Relatórios do Pé</h2>
         <div className={styles.actionButtons}>
-          <button className={styles.editarBtn} type="button">
-            + Editar
-          </button>
-          <button className={styles.apagarBtn} type="button">
-            🗑 Apagar
-          </button>
+          {/* Você pode adicionar botões editar/apagar geral aqui */}
         </div>
       </header>
 
       <div className={styles.separator} />
 
-      {/* Mini título "Relatórios" com linha laranja */}
       <div className={styles.miniTitleWrapper}>
         <h3 className={styles.miniTitle}>Relatórios</h3>
         <div className={styles.miniTitleLine} />
       </div>
 
-      <table className={styles.table} role="table" aria-label="Tabela de relatórios do pé 2">
+      <table className={styles.table} role="table" aria-label="Tabela de relatórios">
         <thead>
           <tr>
             <th>Descrição</th>
@@ -45,25 +38,27 @@ export default function PeRelatoriosContent() {
           </tr>
         </thead>
         <tbody>
-          {relatorios.map((relatorio, index) => (
-            <tr key={index}>
-              <td><strong>{relatorio.descricao}</strong></td>
-              <td>{relatorio.data}</td>
+          {relatorios.map((relatorio) => (
+            <tr key={relatorio.id_relatorio}>
+              <td><strong>{relatorio.observacoes || 'Sem descrição'}</strong></td>
+              <td>{new Date(relatorio.data_analise).toLocaleDateString('pt-BR')}</td>
               <td>
-                <button
-                  className={styles.verRelatorioBtn}
-                  type="button"
-                  aria-label={`Ver relatório ${relatorio.descricao}`}
-                >
-                  Ver relatório →
-                </button>
+                <Link href={`/pe-relatorios/${peId}/relatorio/${relatorio.id_relatorio}`}>
+                  <button
+                    className={styles.verRelatorioBtn}
+                    type="button"
+                    aria-label={`Ver relatório ${relatorio.id_relatorio}`}
+                  >
+                    Ver relatório →
+                  </button>
+                </Link>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
 
-      <div className={styles.footerText}>1-1</div>
+      <div className={styles.footerText}>{`Total de relatórios: ${relatorios.length}`}</div>
     </section>
   );
 }
