@@ -1,4 +1,4 @@
-.talhoesBox {
+.container {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 8px #0001;
@@ -7,18 +7,52 @@
   border: 2px solid #f8ecd7;
 }
 
-.link1{
-  text-decoration: none;
-}
 
-.headerRow {
+
+.tdver {
+  width: 80px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px;
+  align-items: center; /* centraliza verticalmente */
+  justify-content: flex-end; /* seta à direita */
+  gap: 8px; /* espaço entre imagem e seta */
 }
 
-.detailBtn {
+.arrow {
+  font-size: 1.6rem;
+  color: #888;
+  cursor: pointer;
+  /* removi margin-left:10 (que estava sem unidade) e margin-bottom para deixar alinhado */
+}
+
+
+.filters {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+  align-items: flex-end;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filterGroup label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.select {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  min-width: 180px;
+}
+
+.searchButton {
   background: #49A010;
   color: #fff;
   border: none;
@@ -26,18 +60,16 @@
   padding: 8px 24px;
   cursor: pointer;
   font-weight: bold;
+  font-size: 1rem;
+  height: 38px;
   display: flex;
   align-items: center;
-  font-size: 1rem;
-  transition: background 0.2s;
-}
-.detailBtn:hover {
-  background: #388a0c;
 }
 
 .tableWrapper {
   width: 100%;
   overflow-x: auto;
+  margin-bottom: 24px;
 }
 
 .table {
@@ -47,9 +79,11 @@
   background: #fff;
 }
 
+
+
 .table th, .table td {
-  padding: 12px 8px;
   text-align: left;
+  padding: 6px 18px;
 }
 
 .table th {
@@ -62,11 +96,61 @@
   border-bottom: 1px solid #eee;
 }
 
-.arrow {
-  font-size: 1.5rem;
-  color: #888;
-  text-align: right;
+.statusActive {
+  background: #49A010;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+
+.viewButton {
+  background: #ffb534;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 16px;
   cursor: pointer;
+  font-weight: 500;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.pageButton {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 6px 16px;
+  cursor: pointer;
+  color: #333;
+}
+
+.pageNumbers {
+  display: flex;
+  gap: 8px;
+}
+
+.pageNumber {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: none;
+  cursor: pointer;
+}
+
+.pageNumber.active {
+  background: #49A010;
+  color: white;
+  border-color: #49A010;
 }
 
 .topBar {
@@ -74,6 +158,7 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 16px;
+  gap: 24px;
 }
 
 .searchGroup {
@@ -127,6 +212,7 @@
   display: flex;
   align-items: center;
   transition: background 0.2s;
+  height: 40px;
 }
 .addBtn:hover {
   background: #388a0c;
@@ -134,8 +220,10 @@
 
 .menuTd {
   position: relative;
+  width: 100px;
 }
 .menuWrapper {
+  width: 140px;
   display: flex;
   align-items: center;
   position: relative;
@@ -152,7 +240,13 @@
   display: flex;
   align-items: center;
   gap: 4px;
+  box-shadow: none;
 }
+
+.link1{
+  text-decoration: none;
+}
+
 .arrowDown {
   font-size: 0.9rem;
   margin-left: 4px;
@@ -183,3 +277,24 @@
 .dropdownItem:hover {
   background: #f8ecd7;
 } 
+
+.statusDot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.statusYellow {
+  background-color: #f4c20d; /* amarelo */
+}
+
+.statusPurple {
+  background-color: #6f42c1; /* roxo */
+}
+
+.statusGray {
+  background-color: #a9a9a9; /* cinza */
+}

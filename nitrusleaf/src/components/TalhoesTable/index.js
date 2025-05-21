@@ -8,7 +8,7 @@ export default function TalhoesTable() {
     <section className={styles.talhoesBox}>
       <div className={styles.headerRow}>
         <h2>Talhões</h2>
-        <Link href="/talhoes-detalhes">
+        <Link href="/talhoes-detalhes" className={styles.link1}>
           <button className={styles.detailBtn}>
             <span style={{marginRight: 8}}>&#8594;</span> Mais detalhes
           </button>
@@ -29,7 +29,7 @@ export default function TalhoesTable() {
               <tr key={idx}>
                 <td>{`Talhão ${item}`}</td>
                 <td>{item === 1 ? '27/32' : item === 2 ? '13/24' : '12/26'}</td>
-                <td>13/05/2025</td>
+                <td className={styles.tdzm}>13/05/2025</td>
                 <td className={styles.arrow}>&#8250;</td>
               </tr>
             ))}
