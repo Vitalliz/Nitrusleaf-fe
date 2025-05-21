@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import styles from './PeRelatoriosContent.module.css';
 
-export default function PeRelatoriosContent({ relatorios, peId }) {
+export default function PeRelatoriosContent({ relatorios, peId, talhaoId }) {
   if (!relatorios || relatorios.length === 0) {
     return <p>Nenhum relatório encontrado para este pé.</p>;
   }
@@ -11,7 +11,7 @@ export default function PeRelatoriosContent({ relatorios, peId }) {
   return (
     <section className={styles.container}>
       <header className={styles.header}>
-        <Link href={`/talhao-pes`}>
+        <Link href={`/talhao-pes/${talhaoId}`}>
           <button className={styles.voltarBtn} type="button" aria-label="Voltar">
             ← Voltar
           </button>

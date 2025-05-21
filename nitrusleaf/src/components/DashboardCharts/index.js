@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useState, useContext } from "react";
 import Select from "react-select";
 import { Pie, Bar } from "react-chartjs-2";
@@ -30,19 +31,13 @@ function formatMonthLabel(label) {
   if (!year || !month) return label;
   const date = new Date(year, parseInt(month, 10) - 1);
 
-  // Pega a string curta do mês em pt-BR (ex: "dez.")
   let shortMonth = date.toLocaleString("pt-BR", { month: "short" });
-
-  // Remove o ponto final, se existir
   shortMonth = shortMonth.replace(".", "");
-
-  // Coloca a primeira letra maiúscula e o restante minúsculo
   return shortMonth.charAt(0).toUpperCase() + shortMonth.slice(1).toLowerCase();
 }
 
-
 export default function DashboardCharts() {
-  const { user, selectedProperty, changeProperty } = useContext(AuthContext);
+  const { user, selectedProperty, loadingAuth, changeProperty } = useContext(AuthContext);
 
   const [pieData, setPieData] = useState(null);
   const [barData, setBarData] = useState(null);
@@ -57,10 +52,10 @@ export default function DashboardCharts() {
     : null;
 
   useEffect(() => {
-    if (selectedProperty?.id) {
+    if (!loadingAuth && selectedProperty?.id) {
       fetchData(selectedProperty.id);
     }
-  }, [selectedProperty]);
+  }, [loadingAuth, selectedProperty]);
 
   const fetchData = async (propertyId) => {
     try {
@@ -87,7 +82,6 @@ export default function DashboardCharts() {
         ],
       });
 
-      // Aplica formatação de mês abreviado nas labels mensais
       const formattedLabels = monthlyBarChartData.labels.map(formatMonthLabel);
 
       setMonthlyBarData({
@@ -111,12 +105,15 @@ export default function DashboardCharts() {
       y: {
         ticks: {
           stepSize: 1,
-          // Mostra só valores inteiros no eixo Y
           callback: (value) => Number.isInteger(value) ? value : null,
         },
       },
     },
   };
+
+  if (loadingAuth) {
+    return <p>Carregando dados do usuário...</p>;
+  }
 
   if (!user || !Array.isArray(user.propriedades) || user.propriedades.length === 0) {
     return <p>Você não possui propriedades cadastradas.</p>;
@@ -143,7 +140,6 @@ export default function DashboardCharts() {
       </div>
 
       <div className={styles.chartsRow}>
-        {/* Pie Chart */}
         <div className={styles.card}>
           <h3>Ocorrências totais de deficiências em %</h3>
           {pieData ? <Pie data={pieData} /> : <p>Carregando...</p>}
@@ -164,14 +160,12 @@ export default function DashboardCharts() {
           <button className={styles.detailBtn}>Detalhar</button>
         </div>
 
-        {/* Bar Chart por Talhão */}
         <div className={styles.card}>
           <h3>Deficiência por Talhão</h3>
           {barData ? <Bar data={barData} options={barOptions} /> : <p>Carregando...</p>}
           <button className={styles.detailBtn}>Detalhar</button>
         </div>
 
-        {/* Bar Chart Mensal */}
         <div className={styles.card}>
           <h3>Evolução das Deficiências (%)</h3>
           {monthlyBarData ? <Bar data={monthlyBarData} options={barOptions} /> : <p>Carregando...</p>}

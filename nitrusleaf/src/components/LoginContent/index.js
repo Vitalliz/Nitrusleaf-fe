@@ -1,17 +1,15 @@
-// src/components/LoginContent.js
 'use client';
 
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styles from "./LoginContent.module.css";
 import Link from 'next/link';
-import api from "@/services/api";
-import { useRouter } from "next/navigation"; // 🔧 Importando do next/navigation
+import { AuthContext } from "@/contexts/AuthContext";
 
 export default function LoginContent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const router = useRouter(); // 🔧 Corrigido
+  const { handleLogin } = useContext(AuthContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,18 +21,8 @@ export default function LoginContent() {
     }
 
     try {
-      const { data } = await api.post("/auth/login", { email, senha: password });
-
-      if (data?.accessToken) {
-        localStorage.setItem("accessToken", data.accessToken);
-        localStorage.setItem("refreshToken", data.refreshToken);
-        api.defaults.headers.Authorization = `Bearer ${data.accessToken}`;
-
-        // 🚀 Redireciona para o dashboard após login
-        router.replace("/dashboard");
-      } else {
-        setError("Erro ao fazer login. Tente novamente.");
-      }
+      await handleLogin(email, password);
+      // Navegação e estado são gerenciados no handleLogin
     } catch (error) {
       setError("Credenciais inválidas.");
     }

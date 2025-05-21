@@ -44,13 +44,13 @@ export default function PeRelatorioPage() {
         <Sidebar />
         <main className={styles.mainContent}>
           <div className={styles.titleRow}>
-            <h1>
-              Histórico &gt; Talhões &gt; <strong>Talhão 1</strong>
-            </h1>
-            <button className={styles.editTalhaoBtn} type="button">
-              <span>✏️</span> Editar Talhão
-            </button>
-          </div>
+          <h1>
+            Histórico &gt; Talhões &gt; <strong>{pe?.nome || "Talhão desconhecido"}</strong>
+          </h1>
+          <button className={styles.editTalhaoBtn} type="button">
+            <span>✏️</span> Editar Talhão
+          </button>
+           </div>
           <div className={styles.line} />
           <PeRelatorioContent pe={pe} relatorio={relatorio} />
         </main>

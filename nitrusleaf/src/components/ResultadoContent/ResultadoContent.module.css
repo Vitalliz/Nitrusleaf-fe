@@ -69,6 +69,16 @@
   text-transform: uppercase;
 }
 
+.badgeManganes {
+  background-color: #FFB534;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
 .percentual {
   display: flex;
   align-items: center;

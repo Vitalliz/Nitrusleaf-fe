@@ -8,8 +8,9 @@ import styles from '../PeRelatorios.module.css';
 import api from '@/services/api';
 
 export default function PeRelatorios() {
-  const { peId } = useParams();  // Ajustado para 'peId'
+  const { peId } = useParams();
   const [relatorios, setRelatorios] = useState(null);
+  const [talhaoId, setTalhaoId] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -27,6 +28,22 @@ export default function PeRelatorios() {
       .finally(() => setLoading(false));
   }, [peId]);
 
+  useEffect(() => {
+    if (!peId) return;
+
+    async function fetchTalhao() {
+      try {
+        const res = await api.get(`/pes/${peId}`);
+        setTalhaoId(res.data.fk_id_talhao);
+      } catch (error) {
+        console.error('Erro ao buscar talhão do pé:', error);
+        setTalhaoId(null);
+      }
+    }
+
+    fetchTalhao();
+  }, [peId]);
+
   return (
     <div className={styles.pageLayout}>
       <Header2 />
@@ -42,7 +59,11 @@ export default function PeRelatorios() {
             </button>
           </div>
           <div className={styles.line} />
-          {loading ? <p>Carregando relatórios...</p> : <PeRelatoriosContent relatorios={relatorios} peId={peId} />}
+          {loading ? (
+            <p>Carregando relatórios...</p>
+          ) : (
+            <PeRelatoriosContent relatorios={relatorios} peId={peId} talhaoId={talhaoId} />
+          )}
         </main>
       </div>
     </div>
